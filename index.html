@@ -120,10 +120,12 @@
             font-weight: 700;
             margin-bottom: 35px;
         }
+        
+        /* یہ گرڈ سسٹم ہے جو چاروں کارڈز کو ایک ساتھ خوبصورتی سے دکھائے گا */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
         }
         .card {
             background: white;
@@ -136,26 +138,26 @@
         }
         .svg-container {
             width: 100%;
-            height: 210px;
+            height: 180px;
             background: #f8fafc;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .card-body {
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
         .card h3 {
             margin: 0 0 12px 0;
-            font-size: 20px;
+            font-size: 18px;
             color: var(--primary);
         }
         .card p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 25px;
             line-height: 1.6;
             flex-grow: 1;
@@ -168,7 +170,7 @@
             padding: 12px 24px;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px;
             text-align: center;
             margin-top: auto;
         }
@@ -196,7 +198,7 @@
             <p>Clear, professional, and evidence-based diagnostic insights.</p>
             
             <div class="search-wrapper">
-                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Search parameters (e.g. BUN, Hb, SGPT, Creatinine)..." class="search-input" autocomplete="off">
+                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Search parameters (e.g. Cholesterol, BUN, Hb, SGPT)..." class="search-input" autocomplete="off">
                 <div id="suggestionBox" class="suggestion-box"></div>
             </div>
         </div>
@@ -205,11 +207,13 @@
     <main class="container main-content">
         <h2 class="section-title">Available Medical Test Guides</h2>
         
+        <!-- یہاں اب چاروں کارڈز ایک ہی قطار اور ایک ہی گرڈ کے اندر موجود ہیں -->
         <div class="grid">
-            <!-- CBC Card (Premium Diagnostics Tube & Cells) -->
+            
+            <!-- کارڈ 1: CBC -->
             <div class="card">
                 <div class="svg-container">
-                    <svg width="120" height="120" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="26" y="10" width="12" height="38" rx="6" stroke="#4a5568" stroke-width="2.5"/>
                         <line x1="23" y1="10" x2="41" y2="10" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
                         <path d="M27 24C27 24 29 22 32 24C35 26 37 24 37 24V42C37 45.3137 34.3137 48 32 48C29.6863 48 27 45.3137 27 42V24Z" fill="#e53e3e" opacity="0.85"/>
@@ -218,46 +222,37 @@
                         <circle cx="16" cy="28" r="4" fill="#e53e3e"/>
                         <circle cx="48" cy="22" r="3" fill="#e53e3e" opacity="0.7"/>
                         <circle cx="46" cy="40" r="5" fill="#e53e3e"/>
-                        <circle cx="18" cy="44" r="2" fill="#3182ce"/>
                     </svg>
                 </div>
                 <div class="card-body">
                     <h3>Complete Blood Count (CBC)</h3>
-                    <p>Detailed evaluation covering Hemoglobin (Hb), WBC differentials, RBC indices, and Platelet clinical parameters.</p>
+                    <p>Detailed evaluation covering Hemoglobin (Hb), WBC differentials, RBC indices, and Platelets.</p>
                     <a href="cbc-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
             
-            <!-- LFT Card (True Anatomical Liver Graphic) -->
+            <!-- کارڈ 2: LFT -->
             <div class="card">
                 <div class="svg-container">
-                    <svg width="120" height="120" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 35C10 24 18 16 34 16C46 16 54 22 54 29C54 37 44 46 32 46C18 46 10 43 10 35Z" fill="#9b2c2c"/>
                         <path d="M32 16C36 24 36 34 30 46" stroke="#4a1212" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M33 32C35 34 37 34 37 31C37 28 34 26 32 27" stroke="#38a169" stroke-width="2" stroke-linecap="round" fill="none"/>
                         <circle cx="37" cy="31" r="2" fill="#38a169"/>
                     </svg>
                 </div>
                 <div class="card-body">
                     <h3>Liver Function Tests (LFT)</h3>
-                    <p>Comprehensive insights covering all key liver parameters including SGPT, Bilirubin fractions, ALP, and Proteomic balance.</p>
+                    <p>Comprehensive insights covering all key liver parameters including SGPT, Bilirubin, and ALP.</p>
                     <a href="lft-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
 
-            <!-- RFT Card (True Kidney Anatomy with Urinary Tract Hints) -->
+            <!-- کارڈ 3: RFT -->
             <div class="card">
                 <div class="svg-container">
-                    <svg width="120" height="120" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Left Kidney -->
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 20C17 22 15 27 15 32C15 38 18 42 22 42C25 42 25 38 24 35C23 32 23 29 24.5 26C26 23 24 20 22 20Z" fill="#8c2d2d"/>
-                        <!-- Right Kidney -->
                         <path d="M42 20C47 22 49 27 49 32C49 38 46 42 42 42C39 42 39 38 40 35C41 32 41 29 39.5 26C38 23 40 20 42 20Z" fill="#8c2d2d"/>
-                        <!-- Ureters / Renal Pelvis lines to make it unmistakably Kidney -->
-                        <path d="M23 33C26 34 29 37 30 45" stroke="#cbd5e0" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M41 33C38 34 35 37 34 45" stroke="#cbd5e0" stroke-width="1.5" stroke-linecap="round"/>
-                        <circle cx="22" cy="18" r="1.5" fill="#ecc94b"/>
-                        <circle cx="42" cy="18" r="1.5" fill="#ecc94b"/>
                     </svg>
                 </div>
                 <div class="card-body">
@@ -266,6 +261,25 @@
                     <a href="rft-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
+
+            <!-- کارڈ 4: Lipid Profile (یہاں فکس ہو گیا ہے) -->
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 52C32 52 14 40 14 26C14 18.5 19.5 14 25.5 14C29 14 31 16 32 17.5C33 16 35 14 38.5 14C44.5 14 50 18.5 50 26C50 40 32 52 32 52Z" fill="#e53e3e" opacity="0.12"/>
+                        <path d="M32 52C32 52 14 40 14 26C14 18.5 19.5 14 25.5 14C29 14 31 16 32 17.5C33 16 35 14 38.5 14C44.5 14 50 18.5 50 26C50 40 32 52 32 52Z" stroke="#e53e3e" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M32 21C27.5 25.5 27.5 32.5 32 37C36.5 32.5 36.5 25.5 32 21Z" fill="#ecc94b"/>
+                        <circle cx="24" cy="34" r="2" fill="#ecc94b"/>
+                        <circle cx="40" cy="28" r="2.5" fill="#ecc94b" opacity="0.7"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Lipid Profile (Cholesterol)</h3>
+                    <p>Complete cardiovascular risk assessment tracking Cholesterol, HDL, LDL, and Triglycerides.</p>
+                    <a href="lipid-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -281,21 +295,16 @@
         { name: "WBC (White Blood Cells)", page: "cbc-test.html", category: "CBC" },
         { name: "RBC (Red Blood Cells)", page: "cbc-test.html", category: "CBC" },
         { name: "Platelets", page: "cbc-test.html", category: "CBC" },
-        { name: "Neutrophils", page: "cbc-test.html", category: "CBC" },
-        { name: "Lymphocytes", page: "cbc-test.html", category: "CBC" },
         { name: "SGPT / ALT", page: "lft-test.html", category: "LFT" },
-        { name: "SGOT / AST", page: "lft-test.html", category: "LFT" },
         { name: "Bilirubin Total", page: "lft-test.html", category: "LFT" },
-        { name: "Bilirubin Direct", page: "lft-test.html", category: "LFT" },
-        { name: "Bilirubin Indirect", page: "lft-test.html", category: "LFT" },
         { name: "ALP (Alkaline Phosphatase)", page: "lft-test.html", category: "LFT" },
-        { name: "Albumin", page: "lft-test.html", category: "LFT" },
-        { name: "Globulin", page: "lft-test.html", category: "LFT" },
-        { name: "Total Protein", page: "lft-test.html", category: "LFT" },
-        { name: "A/G Ratio", page: "lft-test.html", category: "LFT" },
         { name: "Creatinine (Serum)", page: "rft-test.html", category: "RFT" },
         { name: "Blood Urea", page: "rft-test.html", category: "RFT" },
-        { name: "BUN (Blood Urea Nitrogen)", page: "rft-test.html", category: "RFT" }
+        { name: "BUN (Blood Urea Nitrogen)", page: "rft-test.html", category: "RFT" },
+        { name: "Total Cholesterol", page: "lipid-test.html", category: "Lipid" },
+        { name: "LDL (Bad Cholesterol)", page: "lipid-test.html", category: "Lipid" },
+        { name: "HDL (Good Cholesterol)", page: "lipid-test.html", category: "Lipid" },
+        { name: "Triglycerides", page: "lipid-test.html", category: "Lipid" }
     ];
 
     function showSuggestions() {
@@ -331,6 +340,5 @@
         }
     });
     </script>
-
 </body>
 </html>
