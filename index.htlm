@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Test Guide | Understand Your Medical Reports</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #28a745;
+            --text-color: #333333;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0056b3, #007bff);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+        .hero h1 {
+            margin: 0 0 15px 0;
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        .search-box {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+        .search-box button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .main-content {
+            margin-top: 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .read-more {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">🔬 Lab Test Guide</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Understand Your Blood & Lab Reports</h1>
+            <p>Clear, accurate, and easy-to-understand guides for your medical lab tests written by industry experts.</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search your test (e.g., CBC, Lipid Profile)...">
+                <button>Search</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <h2 class="section-title">Latest Lab Test Guides</h2>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="tag">BLOOD TEST</span>
+                <h3>Understanding Your Complete Blood Count (CBC)</h3>
+                <p>Learn what high or low white blood cells, red blood cells, and platelets mean for your health.</p>
+                <a href="#" class="read-more">Read Full Guide &rarr;</a>
+            </div>
+
+            <div class="card">
+                <span class="tag">HEART HEALTH</span>
+                <h3>Lipid Profile: Decoding Your Cholesterol Levels</h3>
+                <p>What is the difference between HDL, LDL, and Triglycerides? Find out your optimal ranges.</p>
+                <a href="#" class="read-more">Read Full Guide &rarr;</a>
+            </div>
+
+            <div class="card">
+                <span class="tag">VITAMINS</span>
+                <h3>Vitamin D Deficiency: Levels & Symptoms</h3>
+                <p>Is your Vitamin D level below 30 ng/mL? Here is how to interpret your results and next steps.</p>
+                <a href="#" class="read-more">Read Full Guide &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lab Test Guide. All rights reserved. For informational purposes only.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
