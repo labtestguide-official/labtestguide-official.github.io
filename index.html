@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab Test Guide | Complete Medical Test Information</title>
+    <title>Lab Test Guide | Premium Medical Diagnostics Resource</title>
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #28a745;
-            --text-color: #333333;
-            --bg-color: #f8f9fa;
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --accent: #e0f2fe;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --bg-light: #f8fafc;
         }
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-light);
+            color: var(--text-main);
         }
         header {
             background-color: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-bottom: 3px solid var(--primary-color);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
         }
         .container {
-            width: 85%;
-            max-width: 1100px;
+            width: 90%;
+            max-width: 1140px;
             margin: auto;
         }
         .header-flex {
@@ -36,81 +40,128 @@
         }
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .hero {
-            background: linear-gradient(135deg, #0056b3 0%, #003d82 100%);
+        /* New Premium Hero Section with Lab Background */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 53, 131, 0.85), rgba(0, 30, 80, 0.9)), 
+                        url('https://images.unsplash.com/photo-1579154204601-01588f351167?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            border-bottom: 5px solid #2b6cb0;
         }
-        .hero h1 {
-            margin: 0 0 15px 0;
-            font-size: 36px;
+        .hero-banner h1 {
+            margin: 0 0 20px 0;
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
-        .hero p {
+        .hero-banner p {
             margin: 0;
-            font-size: 18px;
-            opacity: 0.9;
+            font-size: 20px;
+            max-width: 700px;
+            margin: auto;
+            opacity: 0.95;
+            line-height: 1.6;
         }
         .main-content {
-            margin-top: 40px;
-            padding-bottom: 60px;
+            padding: 50px 0;
         }
         .section-title {
-            font-size: 24px;
-            color: #1a202c;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 35px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 2px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
+        /* Modern Card Layout with Images */
         .card {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            padding: 25px;
-            border-top: 4px solid var(--primary-color);
-            transition: transform 0.2s;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #edf2f7;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-cover: cover;
+            object-position: center;
+        }
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         .card h3 {
-            margin: 0 0 10px 0;
-            color: #1a202c;
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            color: var(--text-main);
         }
         .card p {
-            color: #4a5568;
+            color: var(--text-muted);
             font-size: 15px;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
         }
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            transition: background 0.2s;
         }
         .btn:hover {
-            background-color: #004494;
+            background-color: var(--primary-dark);
+        }
+        .btn-disabled {
+            background-color: #e2e8f0;
+            color: #a0aec0;
+            cursor: not-allowed;
         }
         footer {
             background-color: #1a202c;
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
             font-size: 14px;
+            border-top: 4px solid var(--primary);
         }
     </style>
 </head>
@@ -122,36 +173,43 @@
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Enhanced Hero Banner with Medical Lab Backdrop -->
+    <section class="hero-banner">
         <div class="container">
-            <h1>Welcome to Lab Test Guide</h1>
-            <p>Your trusted online medical resource to understand diagnostic lab reports easily.</p>
+            <h1>Understand Your Lab Reports</h1>
+            <p>Clear, professional, and evidence-based diagnostic insights designed to help you monitor your health effectively.</p>
         </div>
     </section>
 
     <main class="container main-content">
-        <h2 class="section-title">Latest Medical Test Guides</h2>
+        <h2 class="section-title">Available Medical Test Guides</h2>
         
         <div class="grid">
-            <!-- CBC Test Card -->
+            <!-- CBC Test Card with Visual Image -->
             <div class="card">
-                <h3>Complete Blood Count (CBC)</h3>
-                <p>Learn how to read your CBC report, including Hemoglobin, WBC, and Platelets reference ranges.</p>
-                <a href="cbc-test.html" class="btn">Read Guide &rarr;</a>
+                <img src="https://images.unsplash.com/photo-1532187863486-abf9d39d6618?auto=format&fit=crop&w=500&q=80" alt="Blood Testing" class="card-img">
+                <div class="card-body">
+                    <h3>Complete Blood Count (CBC)</h3>
+                    <p>A deep dive into your hematological health, covering Hemoglobin, WBC differentials, RBC indices, and Platelet clinical ranges.</p>
+                    <a href="cbc-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
             </div>
             
-            <!-- Future Card Placeholder -->
-            <div class="card" style="border-top-color: #cbd5e0; opacity: 0.7;">
-                <h3>More Guides Coming Soon</h3>
-                <p>We are working on detailed guides for Liver Function Tests (LFT), Kidney Function Tests (RFT), and Sugar Tests.</p>
-                <span class="btn" style="background-color: #a0aec0; cursor: not-allowed;">Stay Tuned</span>
+            <!-- Future Card Placeholder with Lab Setup Image -->
+            <div class="card" style="opacity: 0.75;">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80" alt="Laboratory Diagnostics" class="card-img">
+                <div class="card-body">
+                    <h3>Liver Function Tests (LFT)</h3>
+                    <p>Comprehensive information on SGPT, SGOT, Bilirubin, and Alkaline Phosphatase is coming soon.</p>
+                    <span class="btn btn-disabled">Under Review</span>
+                </div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Lab Test Guide. All rights reserved.</p>
+            <p>&copy; 2026 Lab Test Guide. Dedicated to Public Health Education.</p>
         </div>
     </footer>
 
