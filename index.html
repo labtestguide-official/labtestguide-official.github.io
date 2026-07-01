@@ -61,7 +61,7 @@
             opacity: 0.95;
         }
         
-        /* سمارٹ سرچ بار اور ڈراپ ڈاؤن لسٹ کا ڈیزائن */
+        /* Smart Search Layout */
         .search-wrapper {
             max-width: 600px;
             margin: 0 auto;
@@ -186,9 +186,9 @@
             <h1>Understand Your Lab Reports</h1>
             <p>Clear, professional, and evidence-based diagnostic insights.</p>
             
-            <!-- سمارٹ سرچ بار معہ ڈراپ ڈاؤن لسٹ -->
+            <!-- فکسڈ سرچ بار ڈراپ ڈاؤن لسٹ کے ساتھ -->
             <div class="search-wrapper">
-                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Type any word (e.g. A, Hb, SGPT, Creatinine)..." class="search-input" autocomplete="off">
+                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Type any word (e.g. BUN, Hb, SGPT, Creatinine)..." class="search-input" autocomplete="off">
                 <div id="suggestionBox" class="suggestion-box"></div>
             </div>
         </div>
@@ -223,7 +223,7 @@
                 <img src="https://cdn.pixabay.com/photo/2017/08/29/11/49/kidney-2693056_1280.jpg" alt="Human Kidney Anatomy" class="card-img">
                 <div class="card-body">
                     <h3>Kidney Function Tests (RFT)</h3>
-                    <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, Uric Acid, Electrolytes, and eGFR calculations.</p>
+                    <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, BUN, and Uric Acid levels.</p>
                     <a href="rft-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
@@ -237,7 +237,7 @@
     </footer>
 
     <script>
-    // ڈیٹا بیس جس میں تمام پیرامیٹرز اور ان کے لنکس موجود ہیں
+    // بالکل درست اور کلین ڈیٹا بیس (BUN کے ساتھ)
     const searchDatabase = [
         { name: "Hb (Hemoglobin)", page: "cbc-test.html", category: "CBC" },
         { name: "WBC (White Blood Cells)", page: "cbc-test.html", category: "CBC" },
@@ -257,11 +257,8 @@
         { name: "A/G Ratio", page: "lft-test.html", category: "LFT" },
         { name: "Creatinine (Serum)", page: "rft-test.html", category: "RFT" },
         { name: "Blood Urea", page: "rft-test.html", category: "RFT" },
-        { name: "eGFR (Glomerular Filtration)", page: "rft-test.html", category: "RFT" },
-        { name: "Uric Acid", page: "rft-test.html", category: "RFT" },
-        { name: "Sodium", page: "rft-test.html", category: "RFT" },
-        { name: "Potassium", page: "rft-test.html", category: "RFT" },
-        { name: "Chloride", page: "rft-test.html", category: "RFT" }
+        { name: "BUN (Blood Urea Nitrogen)", page: "rft-test.html", category: "RFT" },
+        { name: "Uric Acid", page: "rft-test.html", category: "RFT" }
     ];
 
     function showSuggestions() {
@@ -273,7 +270,6 @@
             return;
         }
         
-        // لفظ میچ کرنا
         let filtered = searchDatabase.filter(item => item.name.toLowerCase().includes(input));
         
         if (filtered.length > 0) {
@@ -292,7 +288,6 @@
         }
     }
 
-    // باہر کلک کرنے پر باکس بند ہو جائے
     document.addEventListener("click", function(e) {
         if (e.target.id !== "deepSearch") {
             document.getElementById('suggestionBox').style.display = "none";
