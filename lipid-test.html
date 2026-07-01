@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lipid Profile Test Guide | Lab Test Guide</title>
+    <title>Lipid Profile Test Guide (کولیسٹرول ٹیسٹ) | Lab Guide</title>
     <style>
         :root {
             --primary: #0056b3;
@@ -11,6 +11,8 @@
             --text-main: #1a202c;
             --text-muted: #4a5568;
             --bg-light: #f8fafc;
+            --danger: #e53e3e;
+            --success: #38a169;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,7 +45,7 @@
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             border-left: 5px solid #ecc94b;
             margin-bottom: 30px;
         }
@@ -52,16 +54,21 @@
             color: var(--primary);
             font-size: 28px;
         }
-        .test-header p {
-            color: var(--text-muted);
-            margin: 0;
-            font-size: 16px;
+        .urdu-text {
+            font-size: 17px;
+            color: #2d3748;
+            line-height: 1.8;
+            margin-top: 10px;
+            background: #fdfaf2;
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 4px solid #ecc94b;
         }
         .info-section {
             background: white;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
             margin-bottom: 25px;
         }
         .info-section h2 {
@@ -78,7 +85,7 @@
             font-size: 15px;
         }
         th, td {
-            padding: 12px 15px;
+            padding: 14px 15px;
             text-align: left;
             border-bottom: 1px solid #edf2f7;
         }
@@ -88,12 +95,18 @@
             font-weight: 600;
         }
         .status-normal {
-            color: #38a169;
+            color: var(--success);
             font-weight: bold;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
         }
         .status-high {
-            color: #e53e3e;
+            color: var(--danger);
             font-weight: bold;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
         }
         .btn-back {
             display: inline-block;
@@ -115,6 +128,12 @@
             padding: 20px 0;
             margin-top: 40px;
         }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -126,70 +145,76 @@
     </header>
 
     <main class="container main-content">
+        <!-- Test Title Header -->
         <div class="test-header">
             <h1>Lipid Profile Test (کولیسٹرول ٹیسٹ)</h1>
-            <p>Comprehensive evaluation of cardiovascular health, cholesterol fractions, and triglycerides.</p>
+            <p>Comprehensive evaluation of cardiovascular health, blood cholesterol fractions, and triglycerides.</p>
+            <div class="urdu-text">
+                <strong>لپڈ پروفائل ٹیسٹ کیا ہے؟</strong><br>
+                یہ خون کا ایک اہم ٹیسٹ ہے جو جسم میں چربی (Fats) اور کولیسٹرول کی مقدار کو چیک کرنے کے لیے کیا جاتا ہے۔ اس ٹیسٹ کی مدد سے دل کی صحت اور شریانوں میں چربی جمنے کے خطرات کا اندازہ لگایا جاتا ہے۔
+            </div>
         </div>
 
+        <!-- Clinical Parameters & Reference Ranges Table -->
         <div class="info-section">
-            <h2>What is a Lipid Profile?</h2>
-            <p>A lipid profile is a panel of blood tests used to find abnormalities in lipids (fats and cholesterol). The test measures total cholesterol, HDL (good cholesterol), LDL (bad cholesterol), and triglycerides to evaluate the risk of developing cardiovascular diseases.</p>
-        </div>
-
-        <div class="info-section">
-            <h2>Clinical Parameters & Reference Ranges</h2>
+            <h2>Clinical Parameters & Normal Values (ٹیسٹ کی نارمل ویلیوز)</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Parameter</th>
-                        <th>Optimal / Normal Range</th>
-                        <th>Borderline / High</th>
-                        <th>Clinical Significance</th>
+                        <th>Test Parameter</th>
+                        <th>Normal Range (نارمل حد)</th>
+                        <th>High / Borderline (خطرناک حد)</th>
+                        <th>Clinical Significance (اہمیت)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Total Cholesterol</strong></td>
-                        <td class="status-normal">&lt; 200 mg/dL</td>
-                        <td class="status-high">&ge; 240 mg/dL</td>
-                        <td>Overall amount of cholesterol in blood.</td>
+                        <td><span class="status-normal">Less than 200 mg/dL</span></td>
+                        <td><span class="status-high">240 mg/dL or Higher</span></td>
+                        <td>جسم میں کولیسٹرول کی مجموعی مقدار۔</td>
                     </tr>
                     <tr>
                         <td><strong>LDL (Bad Cholesterol)</strong></td>
-                        <td class="status-normal">&lt; 100 mg/dL</td>
-                        <td class="status-high">&ge; 160 mg/dL</td>
-                        <td>High levels lead to plaque buildup in arteries.</td>
+                        <td><span class="status-normal">Less than 100 mg/dL</span></td>
+                        <td><span class="status-high">160 mg/dL or Higher</span></td>
+                        <td>خطرناک کولیسٹرول، جو شریانوں کو بند کرتا ہے۔</td>
                     </tr>
                     <tr>
                         <td><strong>HDL (Good Cholesterol)</strong></td>
-                        <td class="status-normal">&gt; 40 mg/dL (Men)<br>&gt; 50 mg/dL (Women)</td>
-                        <td class="status-high">&lt; 40 mg/dL (Low Risk)</td>
-                        <td>Helps remove bad cholesterol from the bloodstream.</td>
+                        <td><span class="status-normal">More than 40 - 50 mg/dL</span></td>
+                        <td><span class="status-high">Less than 40 mg/dL (Low)</span></td>
+                        <td>اچھا کولیسٹرول، جو دل کی حفاظت کرتا ہے۔</td>
                     </tr>
                     <tr>
                         <td><strong>Triglycerides</strong></td>
-                        <td class="status-normal">&lt; 150 mg/dL</td>
-                        <td class="status-high">&ge; 200 mg/dL</td>
-                        <td>Type of fat used for energy; high levels risk pancreas/heart.</td>
+                        <td><span class="status-normal">Less than 150 mg/dL</span></td>
+                        <td><span class="status-high">200 mg/dL or Higher</span></td>
+                        <td>خون میں موجود چربی کی ایک قسم (انرجی فیٹس)۔</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
+        <!-- Patient Preparation -->
         <div class="info-section">
-            <h2>Patient Preparation (Pre-test Requirements)</h2>
+            <h2>Patient Preparation & Fasting (ٹیسٹ کی تیاری اور پرہیز)</h2>
             <ul>
-                <li><strong>Fasting:</strong> Strict 9 to 12 hours of fasting is highly recommended before sample collection. Only plain water is allowed.</li>
-                <li><strong>Diet & Alcohol:</strong> Avoid heavy fatty meals and alcohol 24 hours prior to the test.</li>
+                <li><strong>Fasting Required (روزہ/نہار منہ):</strong> 
+                    <br>اس ٹیسٹ کے لیے کم از کم <strong>9 سے 12 گھنٹے</strong> نہار منہ ہونا لازمی ہے۔ ٹیسٹ سے پہلے صرف سادہ پانی پینے کی اجازت ہوتی ہے۔
+                </li>
+                <li><strong>Diet Control (خوراک):</strong> 
+                    <br>سیمپل دینے سے 24 گھنٹے پہلے تک زیادہ چکنائی والی غذاؤں اور بھاری کھانوں سے پرہیز کریں۔
+                </li>
             </ul>
         </div>
 
-        <a href="index.html" class="btn-back">&larr; Back to Home</a>
+        <a href="index.html" class="btn-back">&larr; Back to Home Page</a>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Lab Test Guide. Dedicated to Public Health Education.</p>
+            <p>&copy; 2026 Lab Test Guide. Professional Diagnostic Resource.</p>
         </div>
     </footer>
 
