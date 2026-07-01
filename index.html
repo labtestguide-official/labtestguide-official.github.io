@@ -134,10 +134,13 @@
             display: flex;
             flex-direction: column;
         }
-        .card-img {
+        .svg-container {
             width: 100%;
             height: 210px;
-            object-fit: cover;
+            background: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .card-body {
             padding: 25px;
@@ -203,9 +206,17 @@
         <h2 class="section-title">Available Medical Test Guides</h2>
         
         <div class="grid">
-            <!-- CBC Card -->
+            <!-- CBC Card (ان لائن بلڈ سیلز ویکٹر گرافک) -->
             <div class="card">
-                <img src="https://code.benco.io/icon-collection/azure-plugins/hdinsight-cluster.svg" alt="Complete Blood Count Icon" class="card-img" style="background: #eef2f7; padding: 20px; box-sizing: border-box; object-fit: contain;">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="8" cy="12" r="4" fill="#e53e3e" opacity="0.8"/>
+                        <circle cx="15" cy="7" r="3" fill="#e53e3e" opacity="0.6"/>
+                        <circle cx="17" cy="16" r="5" fill="#e53e3e"/>
+                        <circle cx="7" cy="5" r="1.5" fill="#3182ce"/>
+                        <circle cx="12" cy="18" r="2" fill="#3182ce"/>
+                    </svg>
+                </div>
                 <div class="card-body">
                     <h3>Complete Blood Count (CBC)</h3>
                     <p>Detailed evaluation covering Hemoglobin (Hb), WBC differentials, RBC indices, and Platelet clinical parameters.</p>
@@ -213,9 +224,16 @@
                 </div>
             </div>
             
-            <!-- LFT Card (جگر/Liver کے لیے مستند امیج) -->
+            <!-- LFT Card (ان لائن جگر/Liver ویکٹر گرافک) -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80" alt="Liver Diagnostic Lab Concept" class="card-img">
+                <div class="svg-container">
+                    <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13C3 8 7 4 12 4C15.5 4 21 7 21 11C21 15 17 20 12 20C6 20 3 17 3 13Z" fill="#9b2c2c"/>
+                        <path d="M12 4C14 7 16 11 15 15" stroke="#ff8a8a" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="8" cy="10" r="1" fill="#ff8a8a"/>
+                        <circle cx="16" cy="12" r="1.5" fill="#ff8a8a"/>
+                    </svg>
+                </div>
                 <div class="card-body">
                     <h3>Liver Function Tests (LFT)</h3>
                     <p>Comprehensive insights covering all key liver parameters including SGPT, Bilirubin fractions, ALP, and Proteomic balance.</p>
@@ -223,9 +241,15 @@
                 </div>
             </div>
 
-            <!-- RFT Card (گردے/Kidney کے لیے کلینیکل لیب امیج) -->
+            <!-- RFT Card (ان لائن گردے/Kidney ویکٹر گرافک) -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?auto=format&fit=crop&w=600&q=80" alt="Kidney Diagnostic Medical Grid" class="card-img">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 5C4.5 7 4 10 4 12C4 16.5 7 19 9 19C10.5 19 11 17.5 11 16C11 13 8.5 11 8.5 8C8.5 6.5 7.5 5.5 6 5Z" fill="#742a2a"/>
+                        <path d="M18 5C19.5 7 20 10 20 12C20 16.5 17 19 15 19C13.5 19 13 17.5 13 16C13 13 15.5 11 15.5 8C15.5 6.5 16.5 5.5 18 5Z" fill="#742a2a"/>
+                        <path d="M11 16C11 14.5 13 14.5 13 16" stroke="#cbd5e0" stroke-width="1.5"/>
+                    </svg>
+                </div>
                 <div class="card-body">
                     <h3>Kidney Function Tests (RFT)</h3>
                     <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, and BUN levels.</p>
