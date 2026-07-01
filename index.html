@@ -61,7 +61,7 @@
             opacity: 0.95;
         }
         
-        /* Smart Auto-Complete Search */
+        /* Auto-Complete Dropdown Search Style */
         .search-wrapper {
             max-width: 600px;
             margin: 0 auto;
@@ -138,7 +138,10 @@
         .card-img {
             width: 100%;
             height: 210px;
-            object-fit: cover;
+            object-fit: contain;
+            background-color: #f8fafc;
+            padding: 10px;
+            box-sizing: border-box;
         }
         .card-body {
             padding: 25px;
@@ -194,7 +197,7 @@
             <p>Clear, professional, and evidence-based diagnostic insights.</p>
             
             <div class="search-wrapper">
-                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Search parameters (e.g. A, BUN, Hb, SGPT, Creatinine)..." class="search-input" autocomplete="off">
+                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Search parameters (e.g. BUN, Hb, SGPT, Creatinine)..." class="search-input" autocomplete="off">
                 <div id="suggestionBox" class="suggestion-box"></div>
             </div>
         </div>
@@ -204,7 +207,7 @@
         <h2 class="section-title">Available Medical Test Guides</h2>
         
         <div class="grid">
-            <!-- CBC Card (Blood Cells Image) -->
+            <!-- CBC Card -->
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=600&q=80" alt="Blood Cells Microscope" class="card-img">
                 <div class="card-body">
@@ -214,22 +217,22 @@
                 </div>
             </div>
             
-            <!-- LFT Card (Genuine Liver Anatomy Image) -->
+            <!-- LFT Card (حقیقی جگر/Liver کی ایناٹومی امیج) -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Liver Medical Medical Graphic" class="card-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Liver_Anatomy.svg/640px-Liver_Anatomy.svg.png" alt="Human Liver Anatomy Diagram" class="card-img">
                 <div class="card-body">
                     <h3>Liver Function Tests (LFT)</h3>
-                    <p>Comprehensive insights covering all 11 key liver parameters including SGPT, Bilirubin fractions, ALP, and Proteomic balance.</p>
+                    <p>Comprehensive insights covering all key liver parameters including SGPT, Bilirubin fractions, ALP, and Proteomic balance.</p>
                     <a href="lft-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
 
-            <!-- RFT Card (Genuine Kidney Anatomy Image) -->
+            <!-- RFT Card (حقیقی گردے/Kidney کی ایناٹومی امیج) -->
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=600&q=80" alt="Human Kidneys Diagnostic Image" class="card-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Kidney_Anatomy.svg/640px-Kidney_Anatomy.svg.png" alt="Human Kidney Anatomy Diagram" class="card-img">
                 <div class="card-body">
                     <h3>Kidney Function Tests (RFT)</h3>
-                    <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, BUN, and Uric Acid levels.</p>
+                    <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, and BUN levels.</p>
                     <a href="rft-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
@@ -262,8 +265,7 @@
         { name: "A/G Ratio", page: "lft-test.html", category: "LFT" },
         { name: "Creatinine (Serum)", page: "rft-test.html", category: "RFT" },
         { name: "Blood Urea", page: "rft-test.html", category: "RFT" },
-        { name: "BUN (Blood Urea Nitrogen)", page: "rft-test.html", category: "RFT" },
-        { name: "Uric Acid", page: "rft-test.html", category: "RFT" }
+        { name: "BUN (Blood Urea Nitrogen)", page: "rft-test.html", category: "RFT" }
     ];
 
     function showSuggestions() {
