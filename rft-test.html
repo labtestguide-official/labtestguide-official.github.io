@@ -3,51 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renal Function Profile (RFT/KFT) | Lab Test Guide</title>
+    <title>Renal Function Profile (RFT/KFT) | Comprehensive Clinical Guide</title>
     <style>
-        :root { --primary: #0056b3; --text-main: #1a202c; --text-muted: #4a5568; }
-        body { font-family: sans-serif; line-height: 1.6; color: var(--text-main); background: #f8fafc; margin: 0; padding: 0; }
-        .container { width: 90%; max-width: 900px; margin: auto; }
-        .header-img { width: 100%; height: 300px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; }
-        .card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h1 { color: var(--primary); }
-        .range { font-weight: bold; color: #d69e2e; }
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --bg-light: #f8fafc;
+            --accent-green: #2f855a;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .container {
+            width: 90%;
+            max-width: 950px;
+            margin: auto;
+        }
+        .nav-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .test-header {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border: 1px solid #edf2f7;
+        }
+        .test-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+        }
+        .test-title-area {
+            padding: 35px;
+        }
+        .test-title-area h1 {
+            margin: 0 0 10px 0;
+            color: var(--primary);
+            font-size: 34px;
+            font-weight: 800;
+        }
+        .test-title-area p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+        .section-heading {
+            font-size: 24px;
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+        }
+        .parameter-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-left: 6px solid var(--primary);
+            margin-bottom: 30px;
+        }
+        .parameter-card h3 {
+            margin: 0 0 15px 0;
+            color: var(--primary-dark);
+            font-size: 24px;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+        .meta-grid span {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .detail-sub {
+            font-weight: bold;
+            color: var(--text-main);
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .detail-list {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
-    <div class="container" style="padding: 30px 0;">
-        <!-- گردے کی پروفیشنل تصویر -->
-        <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=900&q=80" alt="Kidney Anatomy" class="header-img">
-        
-        <h1>Kidney Function Tests (RFT/KFT)</h1>
-        <p>This profile evaluates the kidneys' ability to filter waste from the blood. Below are the core parameters:</p>
 
-        <div class="card">
+    <header>
+        <div class="container">
+            <a href="index.html" class="nav-link">&larr; Back to Dashboard</a>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 20px;">
+        
+        <!-- گردے کی بالکل نئی اور جینوئن میڈیکل تصویر -->
+        <div class="test-header">
+            <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=1000&q=80" alt="Human Kidney Anatomy and Filtration Function" class="test-img">
+            <div class="test-title-area">
+                <h1>Renal Function Profile (RFT / KFT)</h1>
+                <p>Comprehensive diagnostic assessment evaluating glomerular filtration, nitrogenous waste clearance, and electrolyte-metabolic renal equilibrium.</p>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Core Clinical Parameters</h2>
+
+        <!-- 1. Serum Creatinine -->
+        <div class="parameter-card">
             <h3>1. Serum Creatinine</h3>
-            <p>A waste product from muscle metabolism, filtered by the kidneys.</p>
-            <p><strong>Normal Range:</strong> <span class="range">0.6 – 1.2 mg/dL</span></p>
+            <div class="meta-grid">
+                <div>Adult Male Range: <span>0.6 - 1.2 mg/dL</span></div>
+                <div>Adult Female Range: <span>0.5 - 1.1 mg/dL</span></div>
+                <div>Specimen: <span>Serum (Yellow Top)</span></div>
+            </div>
+            <p><strong>Clinical Significance:</strong> Creatinine is a steady byproduct of muscle metabolism (creatine breakdown). Since healthy kidneys filter it entirely without reabsorption, it serves as the most reliable direct marker for overall renal clearance capacity.</p>
+            <div class="detail-sub">Causes of Elevated Levels:</div>
+            <ul class="detail-list">
+                <li>Acute Kidney Injury (AKI) or Chronic Kidney Disease (CKD)</li>
+                <li>Renal artery stenosis or severe dehydration (reduced perfusion)</li>
+                <li>Urinary tract obstruction (calculi, prostatic hypertrophy)</li>
+            </ul>
         </div>
 
-        <div class="card">
+        <!-- 2. Blood Urea -->
+        <div class="parameter-card">
             <h3>2. Blood Urea</h3>
-            <p>Reflects protein metabolism; high levels often indicate renal stress.</p>
-            <p><strong>Normal Range:</strong> <span class="range">15 – 45 mg/dL</span></p>
+            <div class="meta-grid">
+                <div>Normal Range: <span>15 - 45 mg/dL</span></div>
+                <div>Critical Value: <span>> 100 mg/dL</span></div>
+                <div>Specimen: <span>Serum (Yellow Top)</span></div>
+            </div>
+            <p><strong>Clinical Significance:</strong> Urea is the primary nitrogenous waste product formed in the liver during protein catabolism via the urea cycle. It is filtered by the glomeruli and partially reabsorbed in the tubules, making it highly sensitive to both renal and extra-renal metabolic factors.</p>
+            <div class="detail-sub">Causes of Elevated Levels (Azotemia):</div>
+            <ul class="detail-list">
+                <li>Prerenal factors: Severe dehydration, shock, gastrointestinal hemorrhage, or high protein intake</li>
+                <li>Renal factors: Glomerulonephritis, tubular necrosis, or acute renal failure</li>
+            </ul>
         </div>
 
-        <div class="card">
+        <!-- 3. Blood Urea Nitrogen (BUN) -->
+        <div class="parameter-card">
             <h3>3. Blood Urea Nitrogen (BUN)</h3>
-            <p>Measures the amount of nitrogen in the blood that comes from urea.</p>
-            <p><strong>Normal Range:</strong> <span class="range">7 – 20 mg/dL</span></p>
+            <div class="meta-grid">
+                <div>Normal Range: <span>7 - 20 mg/dL</span></div>
+                <div>BUN/Creatinine Ratio: <span>10:1 to 20:1</span></div>
+                <div>Specimen: <span>Serum / Plasma</span></div>
+            </div>
+            <p><strong>Clinical Significance:</strong> BUN specifically quantifies the nitrogen portion of urea in the bloodstream. Evaluating the BUN-to-Creatinine ratio is a crucial diagnostic step to differentiate whether renal impairment is caused by intrinsic kidney tissue damage or dehydration.</p>
         </div>
 
-        <div class="card">
+        <!-- 4. eGFR (Estimated Glomerular Filtration Rate) -->
+        <div class="parameter-card">
             <h3>4. eGFR (Estimated Glomerular Filtration Rate)</h3>
-            <p>The most accurate test to determine the stage of kidney disease based on creatinine, age, and gender.</p>
-            <p><strong>Normal Range:</strong> <span class="range">> 90 mL/min/1.73m²</span></p>
+            <div class="meta-grid">
+                <div>Normal Level: <span>&gt; 90 mL/min/1.73 m²</span></div>
+                <div>CKD Threshold: <span>&lt; 60 mL/min/1.73 m²</span></div>
+                <div>Calculation Type: <span>CKD-EPI / MDRD Equation</span></div>
+            </div>
+            <p><strong>Clinical Significance:</strong> eGFR is mathematically calculated utilizing serum creatinine levels, age, gender, and race. It represents the actual volume of fluid filtered by the kidney’s glomeruli per unit of time, serving as the gold standard for staging Chronic Kidney Disease (Stages 1 through 5).</p>
         </div>
-        
-        <p><small>*Note: Always consult your physician for clinical interpretation of these results.</small></p>
-        <a href="index.html">Back to Home</a>
-    </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lab Test Guide. Standardized Diagnostic Data Resources.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
