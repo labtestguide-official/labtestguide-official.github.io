@@ -289,6 +289,22 @@
                     <a href="lipid-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
+
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="32" cy="32" r="22" fill="#e53e3e" opacity="0.2"/>
+                        <path d="M32 15C22 25 22 35 32 45C42 35 42 25 32 15Z" fill="#e53e3e"/>
+                        <circle cx="26" cy="30" r="3" fill="white" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Hemoglobin (Hb) Detail</h3>
+                    <p>In-depth insights into oxygen transport, anemia evaluation, normal reference ranges, and clinical focus.</p>
+                    <a href="cbc-parameter.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -340,4 +356,45 @@
                 let anchor = document.createElement('a');
                 anchor.href = item.page;
                 anchor.className = "suggestion-item";
-                anchor.innerHTML = item.name + `<span>${
+                anchor.innerHTML = item.name + `<span>${item.category}</span>`;
+                box.appendChild(anchor);
+            });
+            box.style.display = "block";
+        } else {
+            if (input === "cbc" || input === "cbs" || input.includes("cb")) {
+                box.innerHTML = `
+                    <div class="suggestion-header">Suggestions found</div>
+                    <a href="cbc-test.html" class="suggestion-item did-you-mean">
+                        Did you mean: <strong>Complete Blood Count (CBC)</strong>? <span>Suggestion</span>
+                    </a>`;
+            } else if (input === "hb" || input === "hemoglobin") {
+                box.innerHTML = `
+                    <div class="suggestion-header">Suggestions found</div>
+                    <a href="cbc-parameter.html" class="suggestion-item did-you-mean">
+                        Did you mean: <strong>Hemoglobin (Hb) Detail</strong>? <span>Suggestion</span>
+                    </a>`;
+            } else if (input === "lft" || input.includes("lf")) {
+                box.innerHTML = `
+                    <div class="suggestion-header">No direct match found</div>
+                    <a href="lft-test.html" class="suggestion-item did-you-mean">
+                        Did you mean: <strong>Liver Function Tests (LFT)</strong>? <span>Suggestion</span>
+                    </a>`;
+            } else {
+                box.innerHTML = `
+                    <div class="suggestion-header">No parameters found</div>
+                    <div class="suggestion-item" style="color:#a0aec0; cursor:default;">
+                        Please try searching for CBC, Hb, LFT, RFT, or Lipid.
+                    </div>`;
+            }
+            box.style.display = "block";
+        }
+    }
+
+    document.addEventListener("click", function(e) {
+        if (e.target.id !== "deepSearch") {
+            document.getElementById('suggestionBox').style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>
