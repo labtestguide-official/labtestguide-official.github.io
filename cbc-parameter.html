@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBC Parameter Detail - Hemoglobin (Hb) | Lab Guide</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --bg-light: #f8fafc;
+            --danger: #e53e3e;
+            --success: #38a169;
+            --warning: #dd6b20;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            background-color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: auto;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .main-content {
+            padding: 40px 0;
+        }
+        .test-header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            border-left: 5px solid var(--danger);
+            margin-bottom: 30px;
+        }
+        .test-header h1 {
+            margin: 0 0 10px 0;
+            color: #b7791f;
+            font-size: 28px;
+        }
+        .info-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            margin-bottom: 25px;
+        }
+        .info-section h2 {
+            color: var(--primary-dark);
+            font-size: 20px;
+            margin-top: 0;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+        th, td {
+            padding: 14px 15px;
+            text-align: left;
+            border-bottom: 1px solid #edf2f7;
+        }
+        th {
+            background-color: #f8fafc;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .status-normal {
+            color: var(--success);
+            font-weight: bold;
+            background: #f0fff4;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .status-low {
+            color: var(--warning);
+            font-weight: bold;
+            background: #fffaf0;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .status-high {
+            color: var(--danger);
+            font-weight: bold;
+            background: #fff5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        .diagnosis-card {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .diagnosis-title {
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 5px;
+        }
+        .btn-back {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .btn-back:hover {
+            background-color: #cbd5e0;
+        }
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">🔬 Lab Test Guide</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="test-header">
+            <h1>CBC Key Parameter: Hemoglobin (Hb)</h1>
+            <p>Hemoglobin is the iron-rich protein in red blood cells that carries oxygen from the lungs to the rest of the body. It is a critical marker for systemic health.</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Standard Reference Ranges</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Category</th>
+                        <th>Normal Range</th>
+                        <th>Low Value (Anemia)</th>
+                        <th>High Value (Polycythemia)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Adult Males</strong></td>
+                        <td><span class="status-normal">13.8 to 17.2 g/dL</span></td>
+                        <td><span class="status-low">Below 13.8 g/dL</span></td>
+                        <td><span class="status-high">Above 17.2 g/dL</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adult Females</strong></td>
+                        <td><span class="status-normal">12.1 to 15.1 g/dL</span></td>
+                        <td><span class="status-low">Below 12.1 g/dL</span></td>
+                        <td><span class="status-high">Above 15.1 g/dL</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pregnant Females</strong></td>
+                        <td><span class="status-normal">Above 11.0 g/dL</span></td>
+                        <td><span class="status-low">Below 11.0 g/dL</span></td>
+                        <td><span class="status-high">Above 14.0 g/dL</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-section">
+            <h2>What Can Be Diagnosed From Hemoglobin Levels?</h2>
+            <p style="margin-top: -5px; margin-bottom: 20px; color: var(--text-muted);">A shift in Hemoglobin numbers acts as a primary diagnostic pointer for several hematological and systemic diseases:</p>
+
+            <div class="diagnosis-card">
+                <div class="diagnosis-title">1. Iron Deficiency Anemia (Low Hb)</div>
+                <p style="margin: 0; font-size: 14.5px;">The most common clinical diagnosis. When the body lacks iron, it cannot produce hemoglobin, leading to microcytic, hypochromic anemia characterized by fatigue, weakness, and pale skin.</p>
+            </div>
+
+            <div class="diagnosis-card">
+                <div class="diagnosis-title">2. Chronic Kidney Disease - CKD (Low Hb)</div>
+                <p style="margin: 0; font-size: 14.5px;">The kidneys produce a hormone called Erythropoietin (EPO), which signals bone marrow to make red blood cells. Declining Hb levels can diagnose or track structural kidney damage or failure.</p>
+            </div>
+
+            <div class="diagnosis-card">
+                <div class="diagnosis-title">3. Bone Marrow Disorders & Leukemia (Low Hb)</div>
+                <p style="margin: 0; font-size: 14.5px;">A sudden drop in Hb without blood loss can indicate bone marrow suppression, Aplastic Anemia, or hematological malignancies like Leukemia, where abnormal cells crowd out healthy RBCs.</p>
+            </div>
+
+            <div class="diagnosis-card">
+                <div class="diagnosis-title">4. Polycythemia Vera (High Hb)</div>
+                <p style="margin: 0; font-size: 14.5px;">A rare bone marrow disease where the body produces too many red blood cells, causing the blood to thicken. It is diagnosed when Hb consistently exceeds extreme upper thresholds.</p>
+            </div>
+
+            <div class="diagnosis-card">
+                <div class="diagnosis-title">5. Chronic Hypoxia & COPD (High Hb)</div>
+                <p style="margin: 0; font-size: 14.5px;">In long-term smokers or patients with chronic lung diseases (COPD), the body chronically lacks oxygen. To compensate, it spikes Hb production to carry more oxygen, serving as a key respiratory distress indicator.</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Clinical Interpretations & Actions</h2>
+            <ul>
+                <li><strong>If Hb is Low:</strong> Medical providers usually check Ferritin, Vitamin B12, and Iron profiles. Nutritional counseling, iron supplements, or investigating underlying occult blood loss (gastrointestinal) is initiated.</li>
+                <li><strong>If Hb is High:</strong> Severe Dehydration can temporarily elevate Hb due to blood hemoconcentration. Clinicians evaluate hydration status, rule out sleep apnea, or recommend therapeutic phlebotomy (blood removal) if Polycythemia is confirmed.</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">&larr; Back to Home Page</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lab Test Guide. Professional Diagnostic Resource.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
