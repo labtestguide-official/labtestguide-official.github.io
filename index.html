@@ -66,6 +66,356 @@
             margin: 0 auto;
             position: relative;
         }
+        .search-prompt-text {
+            font-size: 14px;
+            color: #ebf8ff;
+            margin-bottom: 8px;
+            font-weight: 500;
+            text-align: left;
+            padding-left: 15px;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            outline: none;
+            box-sizing: border-box;
+        }
+        .suggestion-box {
+            position: absolute;
+            top: 85px;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            max-height: 280px;
+            overflow-y: auto;
+            z-index: 100;
+            display: none;
+            text-align: left;
+        }
+        .suggestion-header {
+            padding: 10px 20px;
+            background: #f7fafc;
+            font-size: 12px;
+            font-weight: bold;
+            color: #718096;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .suggestion-item {
+            padding: 14px 20px;
+            border-bottom: 1px solid #edf2f7;
+            cursor: pointer;
+            color: var(--text-main);
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+        }
+        .suggestion-item:hover {
+            background-color: #f0f7ff;
+            color: var(--primary);
+        }
+        .suggestion-item span {
+            float: right;
+            font-size: 12px;
+            color: #a0aec0;
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+        .did-you-mean {
+            background: #fffaf0;
+            border-left: 4px solid #dd6b20;
+        }
+
+        .main-content {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            display: flex;
+            flex-direction: column;
+        }
+        .svg-container {
+            width: 100%;
+            height: 180px;
+            background: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .card h3 {
+            margin: 0 0 12px 0;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            margin-top: auto;
+        }
+        footer {
+            background-color: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 4px solid var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-flex">
+            <a href="index.html" class="logo">🔬 Lab Test Guide</a>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="container">
+            <h1>Understand Your Lab Reports</h1>
+            <p>Clear, professional, and evidence-based diagnostic insights.</p>
+            
+            <div class="search-wrapper">
+                <!-- انٹرایکٹو پرامپٹ ٹیکسٹ -->
+                <div id="searchPrompt" class="search-prompt-text">Which diagnostic topic or parameter would you like to review?</div>
+                <input type="text" id="deepSearch" onkeyup="showSuggestions()" placeholder="🔍 Type test name or parameters (e.g. CBC, LFT, Cholesterol)..." class="search-input" autocomplete="off">
+                <div id="suggestionBox" class="suggestion-box"></div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <h2 class="section-title">Available Medical Test Guides</h2>
+        
+        <div class="grid">
+            <!-- Card 1: CBC -->
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="26" y="10" width="12" height="38" rx="6" stroke="#4a5568" stroke-width="2.5"/>
+                        <line x1="23" y1="10" x2="41" y2="10" stroke="#4a5568" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M27 24C27 24 29 22 32 24C35 26 37 24 37 24V42C37 45.3137 34.3137 48 32 48C29.6863 48 27 45.3137 27 42V24Z" fill="#e53e3e" opacity="0.85"/>
+                        <circle cx="16" cy="28" r="4" fill="#e53e3e"/>
+                        <circle cx="48" cy="22" r="3" fill="#e53e3e" opacity="0.7"/>
+                        <circle cx="46" cy="40" r="5" fill="#e53e3e"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Complete Blood Count (CBC)</h3>
+                    <p>Detailed evaluation covering Hemoglobin (Hb), WBC differentials, RBC indices, and Platelets.</p>
+                    <a href="cbc-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+            
+            <!-- Card 2: LFT -->
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 35C10 24 18 16 34 16C46 16 54 22 54 29C54 37 44 46 32 46C18 46 10 43 10 35Z" fill="#9b2c2c"/>
+                        <circle cx="37" cy="31" r="2" fill="#38a169"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Liver Function Tests (LFT)</h3>
+                    <p>Comprehensive insights covering all key liver parameters including SGPT, Bilirubin, and ALP.</p>
+                    <a href="lft-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 3: RFT -->
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 20C17 22 15 27 15 32C15 38 18 42 22 42C25 42 25 38 24 35C23 32 23 29 24.5 26C26 23 24 20 22 20Z" fill="#8c2d2d"/>
+                        <path d="M42 20C47 22 49 27 49 32C49 38 46 42 42 42C39 42 39 38 40 35C41 32 41 29 39.5 26C38 23 40 20 42 20Z" fill="#8c2d2d"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Kidney Function Tests (RFT)</h3>
+                    <p>Full clinical guide tracking Renal Health, Serum Creatinine, Blood Urea, and BUN levels.</p>
+                    <a href="rft-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Card 4: Lipid Profile -->
+            <div class="card">
+                <div class="svg-container">
+                    <svg width="100" height="100" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 52C32 52 14 40 14 26C14 18.5 19.5 14 25.5 14C29 14 31 16 32 17.5C33 16 35 14 38.5 14C44.5 14 50 18.5 50 26C50 40 32 52 32 52Z" stroke="#e53e3e" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M32 21C27.5 25.5 27.5 32.5 32 37C36.5 32.5 36.5 25.5 32 21Z" fill="#ecc94b"/>
+                    </svg>
+                </div>
+                <div class="card-body">
+                    <h3>Lipid Profile (Cholesterol)</h3>
+                    <p>Complete cardiovascular risk assessment tracking Cholesterol, Non-HDL, LDL, and Triglycerides.</p>
+                    <a href="lipid-test.html" class="btn">Read Complete Guide &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lab Test Guide. Dedicated to Public Health Education.</p>
+        </div>
+    </footer>
+
+    <script>
+    const searchDatabase = [
+        { name: "CBC (Complete Blood Count)", page: "cbc-test.html", category: "Panel", keywords: ["cbc", "blood count", "hb", "platelets", "cbd", "cbs"] },
+        { name: "LFT (Liver Function Tests)", page: "lft-test.html", category: "Panel", keywords: ["lft", "liver", "sgpt", "alt", "bilirubin"] },
+        { name: "RFT (Kidney Function Tests)", page: "rft-test.html", category: "Panel", keywords: ["rft", "kidney", "creatinine", "urea", "bun"] },
+        { name: "Lipid Profile (Cholesterol)", page: "lipid-test.html", category: "Panel", keywords: ["lipid", "cholesterol", "ldl", "hdl", "triglycerides", "non-hdl"] },
+        { name: "Hemoglobin (Hb)", page: "cbc-test.html", category: "Parameter", keywords: ["hb", "hemoglobin", "blood"] },
+        { name: "SGPT / ALT", page: "lft-test.html", category: "Parameter", keywords: ["sgpt", "alt", "liver enzyme"] },
+        { name: "Creatinine", page: "rft-test.html", category: "Parameter", keywords: ["creatinine", "serum creatinine"] },
+        { name: "Non-HDL Cholesterol", page: "lipid-test.html", category: "Parameter", keywords: ["non-hdl", "lipid", "cholesterol"] }
+    ];
+
+    function showSuggestions() {
+        let input = document.getElementById('deepSearch').value.toLowerCase().trim();
+        let box = document.getElementById('suggestionBox');
+        let promptText = document.getElementById('searchPrompt');
+        
+        if (input.length === 0) {
+            box.style.display = "none";
+            promptText.innerText = "Which diagnostic topic or parameter would you like to review?";
+            return;
+        }
+        
+        // یوزر کو بتانے کے لیے کہ سسٹم ایکٹو ہے
+        promptText.innerText = `Looking up: "${input}"... Are you checking one of these topics?`;
+        
+        // کی ورڈز میچنگ الگورتھم
+        let filtered = searchDatabase.filter(item => 
+            item.name.toLowerCase().includes(input) || 
+            item.keywords.some(kw => kw.includes(input))
+        );
+        
+        box.innerHTML = "";
+        
+        if (filtered.length > 0) {
+            let header = document.createElement('div');
+            header.className = "suggestion-header";
+            header.innerText = "Are you looking for one of these?";
+            box.appendChild(header);
+            
+            filtered.forEach(item => {
+                let anchor = document.createElement('a');
+                anchor.href = item.page;
+                anchor.className = "suggestion-item";
+                anchor.innerHTML = item.name + `<span>${item.category}</span>`;
+                box.appendChild(anchor);
+            });
+            box.style.display = "block";
+        } else {
+            // سمارٹ گائیڈینس اسپیلنگ چیکر (اگر بندہ غلطی سے 'cbd' یا 'cbs' لکھ دے)
+            if (input === "cbd" || input === "cbs" || input.includes("cb")) {
+                box.innerHTML = `
+                    <div class="suggestion-header">No direct match found</div>
+                    <a href="cbc-test.html" class="suggestion-item did-you-mean">
+                        Did you mean: <strong>Complete Blood Count (CBC)</strong>? <span>Suggestion</span>
+                    </a>`;
+            } else if (input === "lfg" || input.includes("lf")) {
+                box.innerHTML = `
+                    <div class="suggestion-header">No direct match found</div>
+                    <a href="lft-test.html" class="suggestion-item did-you-mean">
+                        Did you mean: <strong>Liver Function Tests (LFT)</strong>? <span>Suggestion</span>
+                    </a>`;
+            } else {
+                box.innerHTML = `
+                    <div class="suggestion-header">No parameters found</div>
+                    <div class="suggestion-item" style="color:#a0aec0; cursor:default;">
+                        Please try searching for CBC, LFT, RFT, or Lipid.
+                    </div>`;
+            }
+            box.style.display = "block";
+        }
+    }
+
+    document.addEventListener("click", function(e) {
+        if (e.target.id !== "deepSearch") {
+            document.getElementById('suggestionBox').style.display = "none";
+        }
+    });
+    </script>
+</body>
+</html>
+justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .hero-banner {
+            background: linear-gradient(135deg, #0056b3 0%, #002d62 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #2b6cb0;
+        }
+        .hero-banner h1 {
+            margin: 0 0 15px 0;
+            font-size: 38px;
+            font-weight: 800;
+        }
+        .hero-banner p {
+            margin: 0 0 25px 0;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+        
+        .search-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
         .search-input {
             width: 100%;
             padding: 15px 25px;
