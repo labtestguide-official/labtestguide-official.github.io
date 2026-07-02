@@ -244,7 +244,7 @@
                 <div class="card-body">
                     <h3>Complete Blood Count (CBC)</h3>
                     <p>Detailed evaluation covering Hemoglobin (Hb), WBC differentials, RBC indices, and Platelets.</p>
-                    <a href="cbc-parameter.html" class="btn">Read Complete Guide &rarr;</a>
+                    <a href="cbc-test.html" class="btn">Read Complete Guide &rarr;</a>
                 </div>
             </div>
             
@@ -300,7 +300,7 @@
 
     <script>
     const searchDatabase = [
-        { name: "CBC (Complete Blood Count)", page: "cbc-parameter.html", category: "Panel", keywords: ["cbc", "blood count", "hb", "platelets", "hemoglobin"] },
+        { name: "CBC (Complete Blood Count)", page: "cbc-test.html", category: "Panel", keywords: ["cbc", "blood count", "platelets"] },
         { name: "Hemoglobin (Hb)", page: "cbc-parameter.html", category: "Parameter", keywords: ["hb", "hemoglobin", "blood"] },
         { name: "LFT (Liver Function Tests)", page: "lft-test.html", category: "Panel", keywords: ["lft", "liver", "sgpt", "alt", "bilirubin"] },
         { name: "RFT (Kidney Function Tests)", page: "rft-test.html", category: "Panel", keywords: ["rft", "kidney", "creatinine", "urea", "bun"] },
@@ -340,39 +340,4 @@
                 let anchor = document.createElement('a');
                 anchor.href = item.page;
                 anchor.className = "suggestion-item";
-                anchor.innerHTML = item.name + `<span>${item.category}</span>`;
-                box.appendChild(anchor);
-            });
-            box.style.display = "block";
-        } else {
-            if (input === "cbc" || input === "cbs" || input.includes("cb")) {
-                box.innerHTML = `
-                    <div class="suggestion-header">Suggestions found</div>
-                    <a href="cbc-parameter.html" class="suggestion-item did-you-mean">
-                        Did you mean: <strong>Complete Blood Count (CBC) / Hemoglobin</strong>? <span>Suggestion</span>
-                    </a>`;
-            } else if (input === "lft" || input.includes("lf")) {
-                box.innerHTML = `
-                    <div class="suggestion-header">No direct match found</div>
-                    <a href="lft-test.html" class="suggestion-item did-you-mean">
-                        Did you mean: <strong>Liver Function Tests (LFT)</strong>? <span>Suggestion</span>
-                    </a>`;
-            } else {
-                box.innerHTML = `
-                    <div class="suggestion-header">No parameters found</div>
-                    <div class="suggestion-item" style="color:#a0aec0; cursor:default;">
-                        Please try searching for CBC, Hb, LFT, RFT, or Lipid.
-                    </div>`;
-            }
-            box.style.display = "block";
-        }
-    }
-
-    document.addEventListener("click", function(e) {
-        if (e.target.id !== "deepSearch") {
-            document.getElementById('suggestionBox').style.display = "none";
-        }
-    });
-    </script>
-</body>
-</html>
+                anchor.innerHTML = item.name + `<span>${
