@@ -13,6 +13,7 @@
             --bg-light: #f8fafc;
             --danger: #e53e3e;
             --success: #38a169;
+            --warning: #dd6b20;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -98,6 +99,38 @@
             padding: 4px 8px;
             border-radius: 4px;
         }
+        .parameter-block {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .parameter-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .parameter-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .parameter-title span {
+            font-size: 11px;
+            background: #ebf8ff;
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        .insight-heading {
+            font-size: 13px;
+            font-weight: bold;
+            color: #4a5568;
+            margin: 5px 0 2px 0;
+        }
         .btn-back {
             display: inline-block;
             background-color: #e2e8f0;
@@ -126,6 +159,143 @@
         }
     </style>
 </head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">🔬 Lab Test Guide</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- Test Title Header -->
+        <div class="test-header">
+            <h1>Lipid Profile Test</h1>
+            <p>A comprehensive blood panel evaluated to assess cardiovascular health, circulating cholesterol fractions, and total triglyceride levels.</p>
+        </div>
+
+        <!-- Clinical Parameters & Reference Ranges Table -->
+        <div class="info-section">
+            <h2>Clinical Parameters & Reference Ranges</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test Parameter</th>
+                        <th>Optimal / Normal Range</th>
+                        <th>Borderline / High Risk</th>
+                        <th>Core Medical Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Cholesterol</strong></td>
+                        <td><span class="status-normal">Less than 200 mg/dL</span></td>
+                        <td><span class="status-high">240 mg/dL or Higher</span></td>
+                        <td>Overall summation of all cholesterol fractions in circulation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LDL Cholesterol</strong></td>
+                        <td><span class="status-normal">Less than 100 mg/dL</span></td>
+                        <td><span class="status-high">160 mg/dL or Higher</span></td>
+                        <td>Bad Cholesterol; deposits plaque directly onto arterial walls.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Non-HDL Cholesterol</strong></td>
+                        <td><span class="status-normal">Less than 130 mg/dL</span></td>
+                        <td><span class="status-high">160 mg/dL or Higher</span></td>
+                        <td>Total atherogenic lipid particles (Total Cholesterol minus HDL).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HDL Cholesterol</strong></td>
+                        <td><span class="status-normal">More than 40 - 50 mg/dL</span></td>
+                        <td><span class="status-high">Less than 40 mg/dL (Low)</span></td>
+                        <td>Good Cholesterol; scavenges circulating fat and clears it via liver.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Triglycerides</strong></td>
+                        <td><span class="status-normal">Less than 150 mg/dL</span></td>
+                        <td><span class="status-high">200 mg/dL or Higher</span></td>
+                        <td>Circulating fat stored from excess caloric intake.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- NEW SECTION: Detailed Heart Health & Management Insights -->
+        <div class="info-section">
+            <h2>Clinical Insights & Heart Health Management</h2>
+            <p style="font-size: 14px; color: var(--text-muted); margin-top: -5px; margin-bottom: 20px;">Understand how each lipid marker acts on your cardiovascular system and how it can be medically managed:</p>
+
+            <!-- 1. Total Cholesterol -->
+            <div class="parameter-block">
+                <div class="parameter-title">Total Cholesterol <span>Overview Marker</span></div>
+                <div class="insight-heading">Cardiovascular Impact:</div>
+                <p style="margin: 0 0 8px 0; font-size: 14.5px;">It represents the sum of all cholesterol elements in your blood. Consistently elevated total cholesterol serves as a primary warning indicator of early lipid accumulation in the bloodstream, gradually forcing the heart to exert higher pressure to sustain normal systemic circulation.</p>
+                <div class="insight-heading">How it is Controlled:</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Primarily managed by filtering out industrial trans-fats (hydrogenated oils, deep-fried fast foods) from daily nutrition, coupled with initiating a standard regimen of at least 30 minutes of moderate aerobic cardiovascular activity daily.</p>
+            </div>
+
+            <!-- 2. LDL Cholesterol -->
+            <div class="parameter-block">
+                <div class="parameter-title">LDL (Low-Density Lipoprotein) <span style="background:#fff5f5; color:#e53e3e;">The Bad Cholesterol</span></div>
+                <div class="insight-heading">Cardiovascular Impact:</div>
+                <p style="margin: 0 0 8px 0; font-size: 14.5px;">Highly atherogenic particles that actively infiltrate the delicate inner endothelial linings of arteries. Over time, these oxidized particles build up into dense fat blocks called arterial plaques, narrowing the pathways, restricting oxygenated blood flow, and directly multiplying the immediate risk of myocardial infarction (Heart Attack).</p>
+                <div class="insight-heading">How it is Controlled:</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Controlled strictly via heavy dietary soluble fibers (oat bran, legumes, green leafy vegetables) which prompt the liver to absorb more LDL from circulation. When lifestyle modifications fall short, clinical management heavily relies on HMG-CoA reductase inhibitors (Statins like Atorvastatin or Rosuvastatin) to downregulate hepatic cholesterol biosynthesis.</p>
+            </div>
+
+            <!-- 3. Non-HDL Cholesterol -->
+            <div class="parameter-block">
+                <div class="parameter-title">Non-HDL Cholesterol <span style="background:#fffaf0; color:#dd6b20;">The Atherogenic Panel</span></div>
+                <div class="insight-heading">Cardiovascular Impact:</div>
+                <p style="margin: 0 0 8px 0; font-size: 14.5px;">Modern clinical cardiology prioritizes Non-HDL over basic LDL metrics because it computes all hazardous particles combined (LDL, VLDL, and IDL). It measures the total volume of plaque-forming units circulating in the blood vessel network, making it a hyper-accurate tracker for potential cardiovascular strokes.</p>
+                <div class="insight-heading">How it is Controlled:</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Requires sweeping reductions in daily simple sugars, high-fructose syrups, and refined carbohydrates (white flour, processed pastries). Total cessation of tobacco consumption is vital, as smoking creates micro-tears in blood vessels, accelerating the rate at which these specific lipids bind to arterial linings.</p>
+            </div>
+
+            <!-- 4. HDL Cholesterol -->
+            <div class="parameter-block">
+                <div class="parameter-title">HDL (High-Density Lipoprotein) <span style="background:#f0fff4; color:#38a169;">The Good Cholesterol</span></div>
+                <div class="insight-heading">Cardiovascular Impact:</div>
+                <p style="margin: 0 0 8px 0; font-size: 14.5px;">Acts as the biological vacuum cleaner of the circulatory framework. Its role is reverse cholesterol transport: scouring the arterial networks to gather stray, floating lipid plaques and carrying them safely back to the liver for metabolic breakdown and biliary excretion. Low readings compromise vascular defense mechanisms.</p>
+                <div class="insight-heading">How it is Controlled / Elevated:</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Unlike other parameters, the clinical goal here is to **increase** values. Elevated through intensive high-intensity interval training (HIIT), running, swimming, and incorporating healthy monounsaturated fats (Extra Virgin Olive Oil, tree nuts, and Omega-3 rich fatty fish) into the diet.</p>
+            </div>
+
+            <!-- 5. Triglycerides -->
+            <div class="parameter-block">
+                <div class="parameter-title">Triglycerides <span>Caloric Storage Fats</span></div>
+                <div class="insight-heading">Cardiovascular Impact:</div>
+                <p style="margin: 0 0 8px 0; font-size: 14.5px;">This fat represents unspent metabolic fuel. When the body encounters excess carbohydrate or caloric intake, the liver converts this energy surplus into triglycerides. Extremely high systemic concentrations dramatically increase blood viscosity, promote arterial hardening (atherosclerosis), and raise the risks of acute pancreatitis.</p>
+                <div class="insight-heading">How it is Controlled:</div>
+                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Managed effectively by targeted bodyweight reduction and restricting simple dietary carbohydrates (rice, potatoes, sugars). Eliminating processed beverages and synthetic juices is mandatory, as these sources cause immediate spikes in hepatic triglyceride production.</p>
+            </div>
+        </div>
+
+        <!-- Patient Preparation -->
+        <div class="info-section">
+            <h2>Patient Preparation & Pre-test Requirements</h2>
+            <ul>
+                <li><strong>Fasting Guidelines:</strong> 
+                    <br>A strict <strong>9 to 12 hours</strong> of fasting is required prior to sample collection. Only plain, unflavored water is permitted during this period.
+                </li>
+                <li><strong>Dietary Restrictions:</strong> 
+                    <br>Avoid consuming heavily fatty meals, high-sugar items, or alcohol for at least 24 hours before the test to prevent transient spikes in lipid markers.
+                </li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="btn-back">&larr; Back to Home Page</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lab Test Guide. Professional Diagnostic Resource.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
 <body>
 
     <header>
