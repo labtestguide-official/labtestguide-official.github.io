@@ -76,6 +76,53 @@
             border-radius: 4px;
             margin-bottom: 30px;
         }
+
+        /* --- New Simple Grid Tabs Menu --- */
+        .grid-header {
+            background: #e53e3e !important;
+            color: white !important;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .custom-tab {
+            display: block !important;
+            background: white !important;
+            border: 2px solid #e2e8f0 !important;
+            border-radius: 8px !important;
+            padding: 12px !important;
+            text-align: center !important;
+            text-decoration: none !important;
+            color: #2d3748 !important;
+            font-weight: bold !important;
+            font-size: 14px !important;
+            transition: all 0.2s ease;
+        }
+        .custom-tab:hover {
+            border-color: #e53e3e !important;
+            background: #fff5f5 !important;
+            color: #e53e3e !important;
+        }
+        /* Specially Highlighting Hemoglobin (Hb) in RED */
+        .hb-highlight {
+            background: #fff5f5 !important;
+            border: 2px solid #e53e3e !important;
+            color: #c53030 !important;
+        }
+        .hb-highlight:hover {
+            background: #e53e3e !important;
+            color: white !important;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -149,6 +196,39 @@
                 <strong>What is a CBC?</strong> A Complete Blood Count (CBC) is a fundamental diagnostic panel that evaluates the three primary cellular components of blood: red blood cells, white blood cells, and platelets. It serves as a crucial tool for screening, diagnosing, and monitoring various hematological conditions.
             </div>
 
+            <!-- --- NEW FIX: PARAMETER TABS SYSTEM --- -->
+            <h2>Explore Specific CBC Parameters</h2>
+            <p style="font-size: 14px; color: #4a5568;">Click on the highlighted Hemoglobin button to view its dedicated file and complete clinical information:</p>
+            
+            <div class="grid-header">🔴 Red Blood Cells (RBC Line)</div>
+            <div class="tabs-grid">
+                <!-- LINK FIXED DIRECTLY TO YOUR SPECIFIC FILE -->
+                <a href="94dbbfda-ab56-4267-b85a-6e97a0f9c89e" class="custom-tab hb-highlight">👉 Hemoglobin (Hb)</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total RBC coming soon!'); return false;">Total RBC Count</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for PCV coming soon!'); return false;">PCV / Hematocrit</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for MCV coming soon!'); return false;">MCV</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for MCH coming soon!'); return false;">MCH</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for MCHC coming soon!'); return false;">MCHC</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for RDW coming soon!'); return false;">RDW</a>
+            </div>
+
+            <div class="grid-header">⚪ White Blood Cells (WBC Line)</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for TLC coming soon!'); return false;">Total WBC (TLC)</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Neutrophils coming soon!'); return false;">Neutrophils</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Lymphocytes coming soon!'); return false;">Lymphocytes</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Eosinophils coming soon!'); return false;">Eosinophils</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Monocytes coming soon!'); return false;">Monocytes</a>
+            </div>
+
+            <div class="grid-header">⚪ Platelets & Indices (PLT Line)</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Platelets coming soon!'); return false;">Platelet Count</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for MPV coming soon!'); return false;">MPV</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for PDW coming soon!'); return false;">PDW</a>
+            </div>
+            <!-- --- END OF PARAMETER TABS --- -->
+
             <h2>1. Red Blood Cell (RBC) Evaluation & Indices</h2>
             <p>Red blood cells are responsible for transporting oxygen throughout the body. Evaluating RBCs involves analyzing both total count and specific structural indices:</p>
             
@@ -173,8 +253,6 @@
                 <li><strong>Neutrophils:</strong> The primary responders to bacterial infections. High counts (Neutrophilia) usually point to acute bacterial issues or tissue inflammation.</li>
                 <li><strong>Lymphocytes:</strong> Central to viral immunity and antibody production. Elevated levels (Lymphocytosis) are common in viral infections like mononucleosis or chronic lymphocytic leukemia.</li>
                 <li><strong>Eosinophils:</strong> Predominantly active during allergic reactions and parasitic infections (e.g., asthma, worm infestations).</li>
-                <li><strong>Monocytes:</strong> Phagocytic cells that assist in removing necrotic tissue and fighting chronic infections.</li>
-                <li><strong>Basophils:</strong> The least common WBCs, involved in immediate hypersensitivity and inflammatory responses.</li>
             </ul>
 
             <h2>3. Platelet (PLT) Count & Indices</h2>
