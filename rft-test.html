@@ -3,119 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renal Function Profile (RFT/KFT) | Comprehensive Clinical Guide</title>
+    <title>Comprehensive Guide to Liver Function Tests (LFT) | Lab Test Guide</title>
     <style>
         :root {
-            --primary: #0056b3;
-            --primary-dark: #003d82;
-            --text-main: #1a202c;
-            --text-muted: #4a5568;
-            --bg-light: #f8fafc;
-            --accent-green: #2f855a;
+            --primary-color: #0056b3;
+            --secondary-color: #28a745;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --border-color: #e2e8f0;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
         }
         header {
             background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-color);
         }
         .container {
             width: 90%;
-            max-width: 950px;
+            max-width: 900px;
             margin: auto;
         }
-        .nav-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        .test-header {
-            background: white;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border: 1px solid #edf2f7;
-        }
-        .test-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-        }
-        .test-title-area {
-            padding: 35px;
-        }
-        .test-title-area h1 {
-            margin: 0 0 10px 0;
-            color: var(--primary);
-            font-size: 34px;
-            font-weight: 800;
-        }
-        .test-title-area p {
-            margin: 0;
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-        .section-heading {
+        .logo {
             font-size: 24px;
-            color: var(--primary-dark);
-            border-bottom: 3px solid var(--primary);
-            padding-bottom: 8px;
-            margin-bottom: 25px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
         }
-        .parameter-card {
+        .article-content {
             background: white;
-            padding: 30px;
+            padding: 40px;
+            margin-top: 30px;
+            margin-bottom: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border-left: 6px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #1a202c;
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .meta {
+            font-size: 14px;
+            color: #718096;
             margin-bottom: 30px;
         }
-        .parameter-card h3 {
-            margin: 0 0 15px 0;
-            color: var(--primary-dark);
-            font-size: 24px;
+        .intro-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
         }
-        .meta-grid {
+
+        /* --- LFT PARAMETER TABS SYSTEM --- */
+        .grid-header {
+            background: #2b6cb0;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .tabs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            background: #f1f5f9;
-            padding: 12px 20px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .custom-tab {
+            display: block;
+            background: white;
+            border: 2px solid #e2e8f0;
             border-radius: 8px;
-            margin-bottom: 20px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        .custom-tab:hover {
+            border-color: #2b6cb0;
+            background: #ebf8ff;
+            color: #2b6cb0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
             font-size: 15px;
         }
-        .meta-grid span {
-            font-weight: 700;
-            color: var(--primary);
+        table, th, td {
+            border: 1px solid var(--border-color);
         }
-        .detail-sub {
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f7fafc;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
             font-weight: bold;
-            color: var(--text-main);
-            margin-top: 15px;
-            margin-bottom: 5px;
         }
-        .detail-list {
-            margin: 0;
-            padding-left: 20px;
-            color: var(--text-muted);
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        .clinical-note {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            border-radius: 4px;
         }
         footer {
             background-color: #1a202c;
             color: white;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            padding: 25px 0;
+            font-size: 14px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -123,83 +171,127 @@
 
     <header>
         <div class="container">
-            <a href="index.html" class="nav-link">&larr; Back to Dashboard</a>
+            <a href="index.html" class="logo">Lab Test Guide</a>
         </div>
     </header>
 
-    <main class="container" style="padding-top: 20px;">
-        
-        <!-- گردے کی بالکل نئی اور جینوئن میڈیکل تصویر -->
-        <div class="test-header">
-            <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=1000&q=80" alt="Human Kidney Anatomy and Filtration Function" class="test-img">
-            <div class="test-title-area">
-                <h1>Renal Function Profile (RFT / KFT)</h1>
-                <p>Comprehensive diagnostic assessment evaluating glomerular filtration, nitrogenous waste clearance, and electrolyte-metabolic renal equilibrium.</p>
+    <main class="container">
+        <article class="article-content">
+            <a href="index.html" class="back-btn">&larr; Back to Dashboard</a>
+            
+            <h1>Liver Function Tests (LFT): A Clinical Overview</h1>
+            <div class="meta">Updated: July 2026 | Verified by Laboratory Professionals</div>
+            
+            <div class="intro-box">
+                <strong>What is an LFT Panel?</strong> Liver Function Tests (LFTs) are groups of blood tests designed to evaluate the clinical status of the liver and biliary tract. They measure specific enzymes, proteins, and substances synthesized or cleared by the liver to screen for hepatic injury, infections, and metabolic abnormalities.
             </div>
-        </div>
 
-        <h2 class="section-heading">Core Clinical Parameters</h2>
-
-        <!-- 1. Serum Creatinine -->
-        <div class="parameter-card">
-            <h3>1. Serum Creatinine</h3>
-            <div class="meta-grid">
-                <div>Adult Male Range: <span>0.6 - 1.2 mg/dL</span></div>
-                <div>Adult Female Range: <span>0.5 - 1.1 mg/dL</span></div>
-                <div>Specimen: <span>Serum (Yellow Top)</span></div>
+            <!-- --- LFT TABS SYSTEM --- -->
+            <h2>Explore Specific LFT Parameters</h2>
+            <p style="font-size: 14px; color: #4a5568;">Click on any specific parameter below to view its clinical significance and detailed breakdown:</p>
+            
+            <div class="grid-header">Liver Enzymes (Hepatic Biomarkers)</div>
+            <div class="tabs-grid">
+                <!-- If you build a detailed page for SGPT, you can replace '#' with its name later -->
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for SGPT / ALT coming soon!'); return false;">SGPT / ALT</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for SGOT / AST coming soon!'); return false;">SGOT / AST</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for ALP coming soon!'); return false;">Alkaline Phosphatase (ALP)</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for GGT coming soon!'); return false;">GGT</a>
             </div>
-            <p><strong>Clinical Significance:</strong> Creatinine is a steady byproduct of muscle metabolism (creatine breakdown). Since healthy kidneys filter it entirely without reabsorption, it serves as the most reliable direct marker for overall renal clearance capacity.</p>
-            <div class="detail-sub">Causes of Elevated Levels:</div>
-            <ul class="detail-list">
-                <li>Acute Kidney Injury (AKI) or Chronic Kidney Disease (CKD)</li>
-                <li>Renal artery stenosis or severe dehydration (reduced perfusion)</li>
-                <li>Urinary tract obstruction (calculi, prostatic hypertrophy)</li>
+
+            <div class="grid-header">Bilirubin & Pigments</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total Bilirubin coming soon!'); return false;">Total Bilirubin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Direct Bilirubin coming soon!'); return false;">Direct Bilirubin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Indirect Bilirubin coming soon!'); return false;">Indirect Bilirubin</a>
+            </div>
+
+            <div class="grid-header">Synthetic Function (Proteins)</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total Protein coming soon!'); return false;">Total Protein</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Albumin coming soon!'); return false;">Albumin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Globulin coming soon!'); return false;">Globulin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for A/G Ratio coming soon!'); return false;">A/G Ratio</a>
+            </div>
+            <!-- --- END OF TABS --- -->
+
+            <h2>1. Clinical Significance of Liver Enzymes</h2>
+            <p>Enzymes are intracellular proteins released into the bloodstream in large quantities during hepatocyte injury or biliary obstruction:</p>
+            
+            <h3>Aminotransferases (ALT & AST)</h3>
+            <ul>
+                <li><strong>Alanine Aminotransferase (ALT / SGPT):</strong> Primarily localized to the liver. Elevated levels are highly specific for hepatic parenchymal injury, such as acute viral hepatitis or fatty liver disease.</li>
+                <li><strong>Aspartate Aminotransferase (AST / SGOT):</strong> Found in liver tissue, heart, and skeletal muscles. An AST higher than ALT often indicates alcoholic liver disease or advanced cirrhosis.</li>
             </ul>
-        </div>
 
-        <!-- 2. Blood Urea -->
-        <div class="parameter-card">
-            <h3>2. Blood Urea</h3>
-            <div class="meta-grid">
-                <div>Normal Range: <span>15 - 45 mg/dL</span></div>
-                <div>Critical Value: <span>> 100 mg/dL</span></div>
-                <div>Specimen: <span>Serum (Yellow Top)</span></div>
-            </div>
-            <p><strong>Clinical Significance:</strong> Urea is the primary nitrogenous waste product formed in the liver during protein catabolism via the urea cycle. It is filtered by the glomeruli and partially reabsorbed in the tubules, making it highly sensitive to both renal and extra-renal metabolic factors.</p>
-            <div class="detail-sub">Causes of Elevated Levels (Azotemia):</div>
-            <ul class="detail-list">
-                <li>Prerenal factors: Severe dehydration, shock, gastrointestinal hemorrhage, or high protein intake</li>
-                <li>Renal factors: Glomerulonephritis, tubular necrosis, or acute renal failure</li>
+            <h3>Cholestatic Enzymes (ALP & GGT)</h3>
+            <ul>
+                <li><strong>Alkaline Phosphatase (ALP):</strong> Associated with the biliary epithelial cells and bone. Marked elevations usually point to biliary tract obstruction (e.g., gallstones) or bone disease.</li>
+                <li><strong>Gamma-Glutamyl Transferase (GGT):</strong> Highly sensitive marker for biliary tract stress and alcohol ingestion; used to confirm if ALP elevation is of hepatic origin.</li>
             </ul>
-        </div>
 
-        <!-- 3. Blood Urea Nitrogen (BUN) -->
-        <div class="parameter-card">
-            <h3>3. Blood Urea Nitrogen (BUN)</h3>
-            <div class="meta-grid">
-                <div>Normal Range: <span>7 - 20 mg/dL</span></div>
-                <div>BUN/Creatinine Ratio: <span>10:1 to 20:1</span></div>
-                <div>Specimen: <span>Serum / Plasma</span></div>
+            <h2>2. Bilirubin Metabolism & Cleansing</h2>
+            <p>Bilirubin is a byproduct of red blood cell breakdown that must be conjugated by the liver for excretion:</p>
+            <ul>
+                <li><strong>Total Bilirubin:</strong> The combined total of both processed and unprocessed pigments. High levels manifest clinically as Jaundice (yellowing of skin and eyes).</li>
+                <li><strong>Direct (Conjugated) Bilirubin:</strong> Water-soluble form processed by the liver. Elevation suggests post-hepatic obstruction or biliary drainage problems.</li>
+                <li><strong>Indirect (Unconjugated) Bilirubin:</strong> Pre-hepatic form. Elevation typically indicates accelerated RBC destruction (Hemolytic Anemia) or conjugation failure.</li>
+            </ul>
+
+            <h2>3. Synthetic Function Markers</h2>
+            <p>The liver synthesizes critical proteins essential for maintaining osmotic pressure and immunity:</p>
+            <ul>
+                <li><strong>Albumin:</strong> The major blood protein made by the liver. Low levels reflect chronic liver damage (decreased manufacturing capacity) or severe malnutrition.</li>
+                <li><strong>Globulin & A/G Ratio:</strong> Measures total immune proteins. Alterations help diagnose chronic inflammatory states, autoimmune hepatitis, or multiple myeloma.</li>
+            </ul>
+
+            <h2>Standard Clinical Reference Ranges</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Standard Reference Range (Adults)</th>
+                        <th>Clinical Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>SGPT / ALT</strong></td>
+                        <td>< 45 U/L (Males) <br> < 35 U/L (Females)</td>
+                        <td>Acute hepatocellular injury marker</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SGOT / AST</strong></td>
+                        <td>< 40 U/L</td>
+                        <td>Hepatic, cardiac, and muscle biomarker</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alkaline Phosphatase (ALP)</strong></td>
+                        <td>44 - 147 U/L</td>
+                        <td>Biliary obstruction and bone marker</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Bilirubin</strong></td>
+                        <td>0.2 - 1.2 mg/dL</td>
+                        <td>Jaundice evaluation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Serum Albumin</strong></td>
+                        <td>3.5 - 5.0 g/dL</td>
+                        <td>Liver synthetic capacity status</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="clinical-note">
+                <strong>Important Medical Disclaimer:</strong> Isolated elevations of LFT enzymes require comprehensive clinical context. Results should always be cross-referenced with symptoms, imaging findings, and laboratory-specific control ranges.
             </div>
-            <p><strong>Clinical Significance:</strong> BUN specifically quantifies the nitrogen portion of urea in the bloodstream. Evaluating the BUN-to-Creatinine ratio is a crucial diagnostic step to differentiate whether renal impairment is caused by intrinsic kidney tissue damage or dehydration.</p>
-        </div>
-
-        <!-- 4. eGFR (Estimated Glomerular Filtration Rate) -->
-        <div class="parameter-card">
-            <h3>4. eGFR (Estimated Glomerular Filtration Rate)</h3>
-            <div class="meta-grid">
-                <div>Normal Level: <span>&gt; 90 mL/min/1.73 m²</span></div>
-                <div>CKD Threshold: <span>&lt; 60 mL/min/1.73 m²</span></div>
-                <div>Calculation Type: <span>CKD-EPI / MDRD Equation</span></div>
-            </div>
-            <p><strong>Clinical Significance:</strong> eGFR is mathematically calculated utilizing serum creatinine levels, age, gender, and race. It represents the actual volume of fluid filtered by the kidney’s glomeruli per unit of time, serving as the gold standard for staging Chronic Kidney Disease (Stages 1 through 5).</p>
-        </div>
-
+        </article>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Lab Test Guide. Standardized Diagnostic Data Resources.</p>
+            <p>&copy; 2026 Lab Test Guide. Designed for Medical Education.</p>
         </div>
     </footer>
 
