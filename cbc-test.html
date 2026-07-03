@@ -77,10 +77,9 @@
             margin-bottom: 30px;
         }
 
-        /* --- New Simple Grid Tabs Menu --- */
         .grid-header {
-            background: #e53e3e !important;
-            color: white !important;
+            background: #e53e3e;
+            color: white;
             padding: 10px 15px;
             font-weight: bold;
             border-radius: 6px;
@@ -95,32 +94,31 @@
             margin-bottom: 30px;
         }
         .custom-tab {
-            display: block !important;
-            background: white !important;
-            border: 2px solid #e2e8f0 !important;
-            border-radius: 8px !important;
-            padding: 12px !important;
-            text-align: center !important;
-            text-decoration: none !important;
-            color: #2d3748 !important;
-            font-weight: bold !important;
-            font-size: 14px !important;
+            display: block;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: bold;
+            font-size: 14px;
             transition: all 0.2s ease;
         }
         .custom-tab:hover {
-            border-color: #e53e3e !important;
-            background: #fff5f5 !important;
-            color: #e53e3e !important;
+            border-color: #e53e3e;
+            background: #fff5f5;
+            color: #e53e3e;
         }
-        /* Specially Highlighting Hemoglobin (Hb) in RED */
         .hb-highlight {
-            background: #fff5f5 !important;
-            border: 2px solid #e53e3e !important;
-            color: #c53030 !important;
+            background: #fff5f5;
+            border: 2px solid #e53e3e;
+            color: #c53030;
         }
         .hb-highlight:hover {
-            background: #e53e3e !important;
-            color: white !important;
+            background: #e53e3e;
+            color: white;
         }
 
         table {
@@ -181,7 +179,7 @@
 
     <header>
         <div class="container">
-            <a href="index.html" class="logo">🔬 Lab Test Guide</a>
+            <a href="index.html" class="logo">Lab Test Guide</a>
         </div>
     </header>
 
@@ -196,14 +194,13 @@
                 <strong>What is a CBC?</strong> A Complete Blood Count (CBC) is a fundamental diagnostic panel that evaluates the three primary cellular components of blood: red blood cells, white blood cells, and platelets. It serves as a crucial tool for screening, diagnosing, and monitoring various hematological conditions.
             </div>
 
-            <!-- --- NEW FIX: PARAMETER TABS SYSTEM --- -->
+            <!-- --- FIXED PARAMETER TABS SYSTEM --- -->
             <h2>Explore Specific CBC Parameters</h2>
-            <p style="font-size: 14px; color: #4a5568;">Click on the highlighted Hemoglobin button to view its dedicated file and complete clinical information:</p>
+            <p style="font-size: 14px; color: #4a5568;">Click on Hemoglobin (Hb) to view its dedicated guide:</p>
             
-            <div class="grid-header">🔴 Red Blood Cells (RBC Line)</div>
+            <div class="grid-header">Red Blood Cells (RBC Line)</div>
             <div class="tabs-grid">
-                <!-- LINK FIXED DIRECTLY TO YOUR SPECIFIC FILE -->
-                <a href="94dbbfda-ab56-4267-b85a-6e97a0f9c89e" class="custom-tab hb-highlight">👉 Hemoglobin (Hb)</a>
+                <a href="cbc-parameter.html" class="custom-tab hb-highlight">Hemoglobin (Hb)</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total RBC coming soon!'); return false;">Total RBC Count</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for PCV coming soon!'); return false;">PCV / Hematocrit</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for MCV coming soon!'); return false;">MCV</a>
@@ -212,7 +209,7 @@
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for RDW coming soon!'); return false;">RDW</a>
             </div>
 
-            <div class="grid-header">⚪ White Blood Cells (WBC Line)</div>
+            <div class="grid-header">White Blood Cells (WBC Line)</div>
             <div class="tabs-grid">
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for TLC coming soon!'); return false;">Total WBC (TLC)</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for Neutrophils coming soon!'); return false;">Neutrophils</a>
@@ -221,13 +218,13 @@
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for Monocytes coming soon!'); return false;">Monocytes</a>
             </div>
 
-            <div class="grid-header">⚪ Platelets & Indices (PLT Line)</div>
+            <div class="grid-header">Platelets and Indices (PLT Line)</div>
             <div class="tabs-grid">
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for Platelets coming soon!'); return false;">Platelet Count</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for MPV coming soon!'); return false;">MPV</a>
                 <a href="#" class="custom-tab" onclick="alert('Detailed guide for PDW coming soon!'); return false;">PDW</a>
             </div>
-            <!-- --- END OF PARAMETER TABS --- -->
+            <!-- --- END OF TABS --- -->
 
             <h2>1. Red Blood Cell (RBC) Evaluation & Indices</h2>
             <p>Red blood cells are responsible for transporting oxygen throughout the body. Evaluating RBCs involves analyzing both total count and specific structural indices:</p>
