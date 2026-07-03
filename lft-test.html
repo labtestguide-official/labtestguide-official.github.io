@@ -3,159 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liver Function Tests (LFT) Guide | Lab Guide</title>
+    <title>Comprehensive Guide to Liver Function Tests (LFT) | Lab Test Guide</title>
     <style>
         :root {
-            --primary: #0056b3;
-            --primary-dark: #003d82;
-            --text-main: #1a202c;
-            --text-muted: #4a5568;
-            --bg-light: #f8fafc;
-            --danger: #e53e3e;
-            --success: #38a169;
-            --warning: #dd6b20;
+            --primary-color: #0056b3;
+            --secondary-color: #28a745;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --border-color: #e2e8f0;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
         }
         header {
             background-color: white;
-            padding: 15px 0;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--primary-color);
         }
         .container {
             width: 90%;
-            max-width: 960px;
+            max-width: 900px;
             margin: auto;
         }
         .logo {
             font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: bold;
+            color: var(--primary-color);
             text-decoration: none;
         }
-        .main-content {
-            padding: 40px 0;
-        }
-        .test-header {
+        .article-content {
             background: white;
-            padding: 30px;
+            padding: 40px;
+            margin-top: 30px;
+            margin-bottom: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-            border-left: 5px solid #ecc94b;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #1a202c;
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #2d3748;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .meta {
+            font-size: 14px;
+            color: #718096;
             margin-bottom: 30px;
         }
-        .test-header h1 {
-            margin: 0 0 10px 0;
-            color: var(--primary);
-            font-size: 28px;
+        .intro-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
         }
-        .info-section {
+
+        /* --- LFT PARAMETER TABS SYSTEM --- */
+        .grid-header {
+            background: #2b6cb0;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .tabs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .custom-tab {
+            display: block;
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-            margin-bottom: 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.2s ease;
         }
-        .info-section h2 {
-            color: var(--primary-dark);
-            font-size: 20px;
-            margin-top: 0;
-            border-bottom: 2px solid #edf2f7;
-            padding-bottom: 10px;
+        .custom-tab:hover {
+            border-color: #2b6cb0;
+            background: #ebf8ff;
+            color: #2b6cb0;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin: 25px 0;
             font-size: 15px;
         }
+        table, th, td {
+            border: 1px solid var(--border-color);
+        }
         th, td {
-            padding: 14px 15px;
+            padding: 12px 15px;
             text-align: left;
-            border-bottom: 1px solid #edf2f7;
         }
         th {
-            background-color: #f8fafc;
-            color: var(--primary);
+            background-color: #edf2f7;
+            color: #2d3748;
             font-weight: 600;
         }
-        .status-normal {
-            color: var(--success);
-            font-weight: bold;
-            background: #f0fff4;
-            padding: 4px 8px;
-            border-radius: 4px;
+        tr:nth-child(even) {
+            background-color: #f7fafc;
         }
-        .status-high {
-            color: var(--danger);
-            font-weight: bold;
-            background: #fff5f5;
-            padding: 4px 8px;
-            border-radius: 4px;
-        }
-        .parameter-block {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-        .parameter-block:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .parameter-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .parameter-title span {
-            font-size: 11px;
-            background: #ebf8ff;
-            color: var(--primary);
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-left: 10px;
-        }
-        .insight-heading {
-            font-size: 13px;
-            font-weight: bold;
-            color: #4a5568;
-            margin: 5px 0 2px 0;
-        }
-        .btn-back {
+        .back-btn {
             display: inline-block;
-            background-color: #e2e8f0;
-            color: var(--text-main);
+            margin-bottom: 20px;
+            color: var(--primary-color);
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-top: 20px;
+            font-weight: bold;
         }
-        .btn-back:hover {
-            background-color: #cbd5e0;
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        .clinical-note {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            border-radius: 4px;
         }
         footer {
             background-color: #1a202c;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
+            padding: 25px 0;
+            font-size: 14px;
         }
         ul {
             padding-left: 20px;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -163,122 +171,127 @@
 
     <header>
         <div class="container">
-            <a href="index.html" class="logo">🔬 Lab Test Guide</a>
+            <a href="index.html" class="logo">Lab Test Guide</a>
         </div>
     </header>
 
-    <main class="container main-content">
-        <!-- Test Title Header -->
-        <div class="test-header">
+    <main class="container">
+        <article class="article-content">
+            <a href="index.html" class="back-btn">&larr; Back to Dashboard</a>
+            
             <h1>Liver Function Tests (LFT): A Clinical Overview</h1>
-            <p>A comprehensive panel used to screen for, diagnose, and monitor liver disease or damage by measuring specific enzymes, proteins, and waste products in the blood.</p>
-        </div>
+            <div class="meta">Updated: July 2026 | Verified by Laboratory Professionals</div>
+            
+            <div class="intro-box">
+                <strong>What is an LFT Panel?</strong> Liver Function Tests (LFTs) are groups of blood tests designed to evaluate the clinical status of the liver and biliary tract. They measure specific enzymes, proteins, and substances synthesized or cleared by the liver to screen for hepatic injury, infections, and metabolic abnormalities.
+            </div>
 
-        <!-- Clinical Parameters & Reference Ranges Table -->
-        <div class="info-section">
-            <h2>Clinical Parameters & Reference Ranges (Adults)</h2>
+            <!-- --- LFT TABS SYSTEM --- -->
+            <h2>Explore Specific LFT Parameters</h2>
+            <p style="font-size: 14px; color: #4a5568;">Click on any specific parameter below to view its clinical significance and detailed breakdown:</p>
+            
+            <div class="grid-header">Liver Enzymes (Hepatic Biomarkers)</div>
+            <div class="tabs-grid">
+                <!-- If you build a detailed page for SGPT, you can replace '#' with its name later -->
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for SGPT / ALT coming soon!'); return false;">SGPT / ALT</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for SGOT / AST coming soon!'); return false;">SGOT / AST</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for ALP coming soon!'); return false;">Alkaline Phosphatase (ALP)</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for GGT coming soon!'); return false;">GGT</a>
+            </div>
+
+            <div class="grid-header">Bilirubin & Pigments</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total Bilirubin coming soon!'); return false;">Total Bilirubin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Direct Bilirubin coming soon!'); return false;">Direct Bilirubin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Indirect Bilirubin coming soon!'); return false;">Indirect Bilirubin</a>
+            </div>
+
+            <div class="grid-header">Synthetic Function (Proteins)</div>
+            <div class="tabs-grid">
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Total Protein coming soon!'); return false;">Total Protein</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Albumin coming soon!'); return false;">Albumin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Globulin coming soon!'); return false;">Globulin</a>
+                <a href="#" class="custom-tab" onclick="alert('Detailed guide for A/G Ratio coming soon!'); return false;">A/G Ratio</a>
+            </div>
+            <!-- --- END OF TABS --- -->
+
+            <h2>1. Clinical Significance of Liver Enzymes</h2>
+            <p>Enzymes are intracellular proteins released into the bloodstream in large quantities during hepatocyte injury or biliary obstruction:</p>
+            
+            <h3>Aminotransferases (ALT & AST)</h3>
+            <ul>
+                <li><strong>Alanine Aminotransferase (ALT / SGPT):</strong> Primarily localized to the liver. Elevated levels are highly specific for hepatic parenchymal injury, such as acute viral hepatitis or fatty liver disease.</li>
+                <li><strong>Aspartate Aminotransferase (AST / SGOT):</strong> Found in liver tissue, heart, and skeletal muscles. An AST higher than ALT often indicates alcoholic liver disease or advanced cirrhosis.</li>
+            </ul>
+
+            <h3>Cholestatic Enzymes (ALP & GGT)</h3>
+            <ul>
+                <li><strong>Alkaline Phosphatase (ALP):</strong> Associated with the biliary epithelial cells and bone. Marked elevations usually point to biliary tract obstruction (e.g., gallstones) or bone disease.</li>
+                <li><strong>Gamma-Glutamyl Transferase (GGT):</strong> Highly sensitive marker for biliary tract stress and alcohol ingestion; used to confirm if ALP elevation is of hepatic origin.</li>
+            </ul>
+
+            <h2>2. Bilirubin Metabolism & Cleansing</h2>
+            <p>Bilirubin is a byproduct of red blood cell breakdown that must be conjugated by the liver for excretion:</p>
+            <ul>
+                <li><strong>Total Bilirubin:</strong> The combined total of both processed and unprocessed pigments. High levels manifest clinically as Jaundice (yellowing of skin and eyes).</li>
+                <li><strong>Direct (Conjugated) Bilirubin:</strong> Water-soluble form processed by the liver. Elevation suggests post-hepatic obstruction or biliary drainage problems.</li>
+                <li><strong>Indirect (Unconjugated) Bilirubin:</strong> Pre-hepatic form. Elevation typically indicates accelerated RBC destruction (Hemolytic Anemia) or conjugation failure.</li>
+            </ul>
+
+            <h2>3. Synthetic Function Markers</h2>
+            <p>The liver synthesizes critical proteins essential for maintaining osmotic pressure and immunity:</p>
+            <ul>
+                <li><strong>Albumin:</strong> The major blood protein made by the liver. Low levels reflect chronic liver damage (decreased manufacturing capacity) or severe malnutrition.</li>
+                <li><strong>Globulin & A/G Ratio:</strong> Measures total immune proteins. Alterations help diagnose chronic inflammatory states, autoimmune hepatitis, or multiple myeloma.</li>
+            </ul>
+
+            <h2>Standard Clinical Reference Ranges</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Test Parameter</th>
-                        <th>Optimal / Normal Range</th>
-                        <th>Borderline / High Risk</th>
-                        <th>Core Medical Function / Focus</th>
+                        <th>Parameter</th>
+                        <th>Standard Reference Range (Adults)</th>
+                        <th>Clinical Significance</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>SGPT / ALT</strong></td>
-                        <td><span class="status-normal">7 to 56 U/L</span></td>
-                        <td><span class="status-high">Above 56 U/L</span></td>
-                        <td>Specific liver cell damage marker; tracks inflammation.</td>
+                        <td>< 45 U/L (Males) <br> < 35 U/L (Females)</td>
+                        <td>Acute hepatocellular injury marker</td>
                     </tr>
                     <tr>
                         <td><strong>SGOT / AST</strong></td>
-                        <td><span class="status-normal">10 to 40 U/L</span></td>
-                        <td><span class="status-high">Above 40 U/L</span></td>
-                        <td>Enzyme found in liver, heart, and muscles; tracks tissue injury.</td>
+                        <td>< 40 U/L</td>
+                        <td>Hepatic, cardiac, and muscle biomarker</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alkaline Phosphatase (ALP)</strong></td>
+                        <td>44 - 147 U/L</td>
+                        <td>Biliary obstruction and bone marker</td>
                     </tr>
                     <tr>
                         <td><strong>Total Bilirubin</strong></td>
-                        <td><span class="status-normal">0.1 to 1.2 mg/dL</span></td>
-                        <td><span class="status-high">Above 1.2 mg/dL</span></td>
-                        <td>Biliary secretion & clearance tracking; Jaundice assessment.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ALP (Alkaline Phosphatase)</strong></td>
-                        <td><span class="status-normal">44 to 147 U/L</span></td>
-                        <td><span class="status-high">Above 147 U/L</span></td>
-                        <td>Bile duct blockage and bone metabolism indicator.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total Protein</strong></td>
-                        <td><span class="status-normal">6.0 to 8.3 g/dL</span></td>
-                        <td><span class="status-high">Outside Normal Range</span></td>
-                        <td>Overall systemic and nutritional status evaluator.</td>
+                        <td>0.2 - 1.2 mg/dL</td>
+                        <td>Jaundice evaluation</td>
                     </tr>
                     <tr>
                         <td><strong>Serum Albumin</strong></td>
-                        <td><span class="status-normal">3.4 to 5.4 g/dL</span></td>
-                        <td><span class="status-high">Less than 3.4 g/dL (Low)</span></td>
-                        <td>Tracks hepatic synthetic balance and fluid retention.</td>
+                        <td>3.5 - 5.0 g/dL</td>
+                        <td>Liver synthetic capacity status</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
 
-        <!-- Detailed Clinical Insights Section -->
-        <div class="info-section">
-            <h2>Clinical Insights & Liver Health Management</h2>
-            <p style="font-size: 14px; color: var(--text-muted); margin-top: -5px; margin-bottom: 20px;">Detailed analysis of major tracking indicators within a complete LFT panel:</p>
-
-            <!-- Biliary Secretion & Clearance -->
-            <div class="parameter-block">
-                <div class="parameter-title">Biliary Secretion & Clearance <span>Waste Processing</span></div>
-                <div class="insight-heading">Clinical Significance (Bilirubin):</div>
-                <p style="margin: 0 0 8px 0; font-size: 14.5px;">Bilirubin is generated through the normal breakdown of red blood cells. The liver filters it from the blood and eliminates it through bile. High circulating levels trigger Jaundice (yellowing of eyes and skin), which frequently points to structural blockages in the bile ducts, gallstones, liver injury, or excess RBC destruction (Hemolysis).</p>
-                <div class="insight-heading">How it is Managed:</div>
-                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Requires evaluating the clear physiological root cause. Proper hydration aids basic toxic clearance. Obstructions like gallstones require direct surgical or endoscopic clearance, while virus-induced issues require dedicated medical care.</p>
+            <div class="clinical-note">
+                <strong>Important Medical Disclaimer:</strong> Isolated elevations of LFT enzymes require comprehensive clinical context. Results should always be cross-referenced with symptoms, imaging findings, and laboratory-specific control ranges.
             </div>
-
-            <!-- Cellular Injury Indicators -->
-            <div class="parameter-block">
-                <div class="parameter-title">Cellular Injury Indicators <span>Enzyme Tracking</span></div>
-                <div class="insight-heading">Clinical Significance (SGPT & SGOT):</div>
-                <p style="margin: 0 0 8px 0; font-size: 14.5px;">When liver cells are stressed or injured, intracellular enzymes spill directly into the bloodstream. <strong>SGPT (ALT)</strong> is highly specific to liver health, and spikes point to conditions like fatty liver, viral hepatitis, or drug-induced damage. <strong>SGOT (AST)</strong> is present in the liver but also in skeletal muscles and the heart; concurrent elevations in both parameters strongly confirm standard liver cellular injury.</p>
-                <div class="insight-heading">How it is Managed:</div>
-                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Controlled efficiently by removing metabolic burdens—restricting alcohol, adjusting high-fat diets, lowering body mass index (BMI), and eliminating hepatotoxic over-the-counter painkillers or unprescribed supplements.</p>
-            </div>
-
-            <!-- Synthetic Capacity Markers -->
-            <div class="parameter-block">
-                <div class="parameter-title">Synthetic Capacity Markers <span>Proteins</span></div>
-                <div class="insight-heading">Clinical Significance (Albumin & Total Protein):</div>
-                <p style="margin: 0 0 8px 0; font-size: 14.5px;">The liver is the body's primary manufacturing hub for vital blood proteins. <strong>Albumin</strong> maintains oncotic pressure, preventing fluid from leaking out of blood vessels into tissues (which causes Edema/Ascites). Low protein levels or an abnormal Albumin-to-Globulin (A/G) ratio signal chronic liver conditions like Cirrhosis, where the organ loses its long-term synthetic capacity.</p>
-                <div class="insight-heading">How it is Managed:</div>
-                <p style="margin: 0; font-size: 14.5px; color: var(--text-muted);">Chronic deficits are addressed through targeted dietary adjustments, supporting raw nutrient assimilation, managing fluid balance under expert guidance, and continuously protecting the remaining functional liver tissue.</p>
-            </div>
-        </div>
-
-        <!-- Patient Preparation -->
-        <div class="info-section">
-            <h2>Patient Preparation & Pre-test Requirements</h2>
-            <ul>
-                <li><strong>Fasting Guidelines:</strong> 
-                    <br>An overnight fast of <strong>8 to 12 hours</strong> is highly recommended for accurate baseline values. Plain water is permitted.
-                </li>
-                <li><strong>Pre-test Restrictions:</strong> 
-                    <br>Avoid heavy physical exertion, alcohol consumption, and non-essential clinical drugs for 24 hours to prevent artificial enzyme fluctuations.
-                </li>
-            </ul>
-        </div>
-
-        <a href="index.html" class="btn-back">&larr; Back to Home Page</a>
+        </article>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Lab Test Guide. Professional Diagnostic Resource.</p>
+            <p>&copy; 2026 Lab Test Guide. Designed for Medical Education.</p>
         </div>
     </footer>
 
