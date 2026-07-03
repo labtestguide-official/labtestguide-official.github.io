@@ -19,6 +19,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.7;
+            scroll-behavior: smooth; /* smooth scrolling for tabs */
         }
         header {
             background-color: white;
@@ -59,10 +60,14 @@
             margin-top: 40px;
         }
         h3 {
-            color: #2d3748;
-            font-size: 18px;
-            margin-top: 20px;
+            color: #2c5282;
+            font-size: 20px;
+            margin-top: 30px;
             margin-bottom: 8px;
+            background: #edf2f7;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid #2c5282;
         }
         .meta {
             font-size: 14px;
@@ -186,33 +191,61 @@
                 <strong>What is an RFT Panel?</strong> Renal Function Tests (RFTs) are a group of vital investigations performed to evaluate how efficiently the kidneys are filtering metabolic waste and functioning overall.
             </div>
 
-            <!-- --- ONLY 4 SPECIFIC TABS --- -->
+            <!-- --- ON-PAGE WORKING TABS --- -->
             <h2>Explore Specific RFT Parameters</h2>
-            <p style="font-size: 14px; color: #4a5568;">Click on any parameter below to view its clinical significance and detailed breakdown:</p>
+            <p style="font-size: 14px; color: #4a5568;">Click on any parameter below to immediately jump to its detailed breakdown:</p>
             
             <div class="grid-header">Kidney Function Markers</div>
             <div class="tabs-grid">
-                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Serum Creatinine coming soon!'); return false;">Serum Creatinine</a>
-                <a href="#" class="custom-tab" onclick="alert('Detailed guide for BUN coming soon!'); return false;">BUN</a>
-                <a href="#" class="custom-tab" onclick="alert('Detailed guide for Serum Urea coming soon!'); return false;">Serum Urea</a>
-                <a href="#" class="custom-tab" onclick="alert('Detailed guide for eGFR calculation coming soon!'); return false;">eGFR</a>
+                <a href="#creatinine-sec" class="custom-tab">Serum Creatinine</a>
+                <a href="#bun-sec" class="custom-tab">BUN</a>
+                <a href="#urea-sec" class="custom-tab">Serum Urea</a>
+                <a href="#egfr-sec" class="custom-tab">eGFR</a>
             </div>
             <!-- --- END OF TABS --- -->
 
-            <h2>Clinical Significance of Key Parameters</h2>
-            <p>The kidneys act as filtration units. When their function decreases, these specific waste products begin to build up in the bloodstream:</p>
+            <h2>Detailed Clinical Breakdown</h2>
+            <p>The kidneys act as filtration units. Below is the comprehensive medical detail of each required parameter:</p>
             
-            <h3>1. Serum Creatinine & eGFR</h3>
-            <ul>
-                <li><strong>Serum Creatinine:</strong> A waste product from normal muscle breakdown. Elevated levels directly point to reduced kidney filtering capacity.</li>
-                <li><strong>eGFR (Estimated Glomerular Filtration Rate):</strong> Calculated using your creatinine value. It is the international standard used to determine the exact stage of kidney health.</li>
-            </ul>
+            <!-- SECTION 1: CREATININE -->
+            <div id="creatinine-sec">
+                <h3>1. Serum Creatinine</h3>
+                <p>A continuous waste byproduct generated at a constant rate by normal muscle breakdown. It is completely filtered out of the blood by healthy kidneys, making it the most important daily baseline marker for renal clearance.</p>
+                <ul>
+                    <li><strong>High Levels:</strong> Indicates decreased kidney function, acute kidney injury (AKI), severe chronic kidney disease (CKD), heavy dehydration, or blockages in the urinary tract.</li>
+                    <li><strong>Low Levels:</strong> Uncommon; usually found in elderly patients due to low muscle mass, severe malnutrition, or during pregnancy.</li>
+                </ul>
+            </div>
 
-            <h3>2. Serum Urea & BUN</h3>
-            <ul>
-                <li><strong>Serum Urea:</strong> Formed during protein metabolism in the liver. High levels indicate that the kidneys are unable to clear protein waste effectively, or can indicate severe dehydration.</li>
-                <li><strong>BUN (Blood Urea Nitrogen):</strong> Measures the nitrogen portion of urea in the blood. Evaluating the BUN-to-Creatinine ratio helps doctors understand whether kidney dysfunction is due to lack of fluids or actual tissue damage.</li>
-            </ul>
+            <!-- SECTION 2: BUN -->
+            <div id="bun-sec">
+                <h3>2. Blood Urea Nitrogen (BUN)</h3>
+                <p>BUN measures the exact amount of nitrogen in your blood that comes from the waste product urea. It is an excellent parameter for finding out the root cause of filtration delays.</p>
+                <ul>
+                    <li><strong>High Levels:</strong> Points toward congestive heart failure, recent heavy dietary protein intake, gastrointestinal bleeding, or kidney damage.</li>
+                    <li><strong>BUN-to-Creatinine Ratio:</strong> A high ratio often helps professionals confirm if the patient is suffering from basic fluid loss (dehydration) rather than permanent kidney damage.</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 3: UREA -->
+            <div id="urea-sec">
+                <h3>3. Serum Urea</h3>
+                <p>Urea is a metabolic waste product synthesized primarily in the liver during protein breakdown. It travels through the blood to the kidneys to be excreted safely.</p>
+                <ul>
+                    <li><strong>High Levels (Uremia):</strong> Occurs when kidneys fail to filter out protein waste effectively, leading to toxic build-up. It can cause fatigue, nausea, and general weakness.</li>
+                    <li><strong>Low Levels:</strong> Can point to advanced liver disease (since the liver makes urea) or severe overhydration.</li>
+                </ul>
+            </div>
+
+            <!-- SECTION 4: EGFR -->
+            <div id="egfr-sec">
+                <h3>4. Estimated Glomerular Filtration Rate (eGFR)</h3>
+                <p>The eGFR is not a separate substance, but a mathematical calculation based on the patient's Serum Creatinine, age, and gender. It is universally recognized as the absolute best way to check kidney efficiency percentage.</p>
+                <ul>
+                    <li><strong>Normal (> 90 mL/min):</strong> Indicates excellent filtration.</li>
+                    <li><strong>Low (< 60 mL/min):</strong> If sustained for over 3 months, it explicitly confirms Chronic Kidney Disease (CKD) and tells the clinician how advanced the disease is.</li>
+                </ul>
+            </div>
 
             <h2>Standard Clinical Reference Ranges</h2>
             <table>
@@ -232,16 +265,16 @@
                     <tr>
                         <td><strong>BUN</strong></td>
                         <td>7 - 20 mg/dL</td>
-                        <td>Evaluates blood urea nitrogen levels</td>
+                        <td>Evaluates blood urea nitrogen and fluid state</td>
                     </tr>
                     <tr>
                         <td><strong>Serum Urea</strong></td>
                         <td>15 - 45 mg/dL</td>
-                        <td>Protein breakdown waste marker</td>
+                        <td>Protein breakdown waste tracking</td>
                     </tr>
                     <tr>
                         <td><strong>eGFR</strong></td>
-                        <td>> 90 mL/min/1.73m²</td>
+                        <td>&gt; 90 mL/min/1.73m²</td>
                         <td>Overall filtration capacity percentage</td>
                     </tr>
                 </tbody>
